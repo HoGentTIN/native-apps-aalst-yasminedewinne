@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Carwash App</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_nieuweAanbieding_button">Nieuwe aanbieding</string>
 </resources>
