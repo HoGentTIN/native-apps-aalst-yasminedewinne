@@ -12,8 +12,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="@string/home_nieuweAanbieding_button"
+            android:text="@string/home_nieuweCarwash_button"
 
+            android:textColor="@android:color/white"
             app:icon="@drawable/ic_plus"
             app:iconTint="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"

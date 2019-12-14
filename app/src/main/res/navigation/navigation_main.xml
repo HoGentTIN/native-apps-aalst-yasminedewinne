@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="be.hogent.yasminedewinne.carwashapp.ui.home.HomeFragment"
+        tools:layout="@layout/home_fragment_main" >
+        <action
+            android:id="@+id/action_homeFragment_to_carwashFragment"
+            app:destination="@id/carwashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carwashFragment"
+        android:name="be.hogent.yasminedewinne.carwashapp.ui.carwash.CarwashFragment"
+        android:label="carwash_fragment_main"
+        tools:layout="@layout/carwash_fragment_main" />
+</navigation>
