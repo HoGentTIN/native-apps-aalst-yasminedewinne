@@ -17,5 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         navController = Navigation.findNavController(this, R.id.navHost_main)
+
+        setSupportActionBar(binding.toolbarMain)
     }
 }
