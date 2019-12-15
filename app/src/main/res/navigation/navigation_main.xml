@@ -18,4 +18,14 @@
         android:name="be.hogent.yasminedewinne.carwashapp.ui.carwash.CarwashFragment"
         android:label="carwash_fragment_main"
         tools:layout="@layout/carwash_fragment_main" />
+    <fragment
+        android:id="@+id/afspraakFragment"
+        android:name="be.hogent.yasminedewinne.carwashapp.ui.afspraak.AfspraakFragment"
+        android:label="afspraak_fragment_main"
+        tools:layout="@layout/afspraak_fragment_main" />
+    <fragment
+        android:id="@+id/zoekFragment"
+        android:name="be.hogent.yasminedewinne.carwashapp.ui.zoek.ZoekFragment"
+        android:label="zoek_fragment_main"
+        tools:layout="@layout/zoek_fragment_main" />
 </navigation>
