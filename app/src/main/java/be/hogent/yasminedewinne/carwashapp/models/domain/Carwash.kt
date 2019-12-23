@@ -15,19 +15,16 @@ import java.time.LocalTime
 )
 data class Carwash(
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey(autoGenerate = false)
     var id: Int = 0,
 
-    @Json(name = "aanbiederId")
-    var userId: Int = 0,
+    var aanbiederId: Int = 0,
 
     var auto: String = "",
 
     var tarief: Double = 0.0,
 
-    //var takenlijst:
-
-    var uitleg: String = "",
+    var takenUitleg: String = "",
 
     var datum: LocalDate,
 
