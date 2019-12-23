@@ -9,6 +9,8 @@ import be.hogent.yasminedewinne.carwashapp.models.domain.Carwash
 
 @Database(entities = [Carwash::class, Afspraak::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase(){
+    abstract val carwashDao: CarwashDao
+    abstract val afspraakDao: AfspraakDao
 }
 
 @Volatile
