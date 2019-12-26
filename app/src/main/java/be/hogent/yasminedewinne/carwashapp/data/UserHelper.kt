@@ -30,13 +30,10 @@ class UserHelper(context: Context) {
         return User(id, voornaam, familienaam, email, telNr)
     }
 
-    fun saveUser(authToken: String, afbeelding: String?) {
+    fun saveUser(authToken: String) {
         dataHelper.put(LocalDataHelper.Key.STR_USERTOKEN, authToken)
 
-        if (afbeelding != null)
-            dataHelper.put(LocalDataHelper.Key.STR_USERPICTURE, afbeelding)
-        else
-            dataHelper.put(LocalDataHelper.Key.STR_USERPICTURE, "")
+        dataHelper.put(LocalDataHelper.Key.STR_USERPICTURE, "")
 
         dataHelper.applyChanges()
     }

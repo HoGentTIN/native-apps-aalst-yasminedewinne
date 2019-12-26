@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -8,4 +8,38 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Default Material Style -->
+    <style name="Widget.MaterialComponents.TextInputLayout.Regular" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.TextInputEditText.FilledBox"
+        parent="Base.Widget.MaterialComponents.TextInputEditText"
+        tools:override="true">
+
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+
+        <item name="android:paddingTop">28dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.TextInputLayout.Regular.ExposedDropdownMenu" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.AutoCompleteTextView.FilledBox"
+        parent="Base.Widget.MaterialComponents.AutoCompleteTextView"
+        tools:override="true">
+
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+
+        <item name="android:paddingTop">28dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
 </resources>

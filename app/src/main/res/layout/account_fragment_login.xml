@@ -1,14 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.auth.LoginFragment">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="be.hogent.yasminedewinne.carwashapp.viewmodels.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_medium"
+            android:text="@string/welcome"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/txt_login_email"
+            app:layout_constraintEnd_toEndOf="@+id/txt_login_email"
+            app:layout_constraintStart_toStartOf="@+id/txt_login_email" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_login_email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.Regular"
+            android:hint="@string/hint_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_xxlarge"
+            android:layout_marginEnd="@dimen/padding_xxlarge"
+            app:layout_constraintBottom_toTopOf="@+id/txt_login_wachtwoord"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4"
+            app:layout_constraintVertical_chainStyle="packed">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_login_wachtwoord"
+            style="@style/Widget.MaterialComponents.TextInputLayout.Regular"
+            android:hint="@string/hint_wachtwoord"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/txt_login_email"
+            app:layout_constraintStart_toStartOf="@+id/txt_login_email"
+            app:layout_constraintTop_toBottomOf="@+id/txt_login_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_login_forgotpassword"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/action_forgot_password"
+            android:textColor="@color/warnColor"
+            app:layout_constraintEnd_toEndOf="@+id/txt_login_wachtwoord"
+            app:layout_constraintStart_toStartOf="@+id/txt_login_wachtwoord"
+            app:layout_constraintTop_toBottomOf="@+id/txt_login_wachtwoord" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_xxlarge"
+            android:text="@string/action_sign_in"
+            app:layout_constraintEnd_toEndOf="@+id/txt_login_wachtwoord"
+            app:layout_constraintStart_toStartOf="@+id/txt_login_wachtwoord"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login_forgotpassword" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_login_registreren"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/action_register"
+            app:layout_constraintEnd_toEndOf="@+id/btn_login"
+            app:layout_constraintStart_toStartOf="@+id/btn_login"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -6,4 +6,13 @@
     <string name="nav_home">Home</string>
     <string name="nav_zoek">Zoeken</string>
     <string name="nav_afspraak">Afspraken</string>
+
+    <string name="action_sign_in">Aanmelden</string>
+    <string name="action_register">Registreren</string>
+    <string name="action_forgot_password">Wachtwoord Vergeten?</string>
+
+    <string name="hint_email">Email</string>
+    <string name="hint_wachtwoord">Wachtwoord</string>
+
+    <string name="welcome">"Welkom!"</string>
 </resources>
