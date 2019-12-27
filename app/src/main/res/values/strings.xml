@@ -11,8 +11,23 @@
     <string name="action_register">Registreren</string>
     <string name="action_forgot_password">Wachtwoord Vergeten?</string>
 
+
     <string name="hint_email">Email</string>
     <string name="hint_wachtwoord">Wachtwoord</string>
 
     <string name="welcome">"Welkom!"</string>
+
+    <!-- Loading -->
+    <string name="title_error_loading">OEPS! Er ging iets mis</string>
+    <string name="loading_motd">Alles word klaar gezet voor gebruik</string>
+    <string name="action_error_loading">App Sluiten</string>
+    <string name="error_loading_nonetwork">
+        Het lukte niet om de gegevens van de server te halen.\n
+        Omdat het de eerste keer is dat je de app gebruik, kunnen we hierdoor geen functionaliteit aanbieden.\n
+        Probeer het later eens opnieuw!
+    </string>
+
+    <!-- VALIDATION ERROR -->
+    <string name="error_empty">Dit veld is verplicht</string>
+
 </resources>

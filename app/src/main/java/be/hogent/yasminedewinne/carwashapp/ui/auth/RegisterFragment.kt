@@ -8,18 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 
 import be.hogent.yasminedewinne.carwashapp.R
+import be.hogent.yasminedewinne.carwashapp.databinding.AccountFragmentRegisterBinding
 
-/**
- * A simple [Fragment] subclass.
- */
 class RegisterFragment : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.account_fragment_register, container, false)
+    private lateinit var binding: AccountFragmentRegisterBinding
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = AccountFragmentRegisterBinding.inflate(inflater)
+
+        return binding.root
     }
 
 
