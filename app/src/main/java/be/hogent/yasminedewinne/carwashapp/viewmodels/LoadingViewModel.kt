@@ -26,10 +26,10 @@ class LoadingViewModel(application: Application) : AndroidViewModel(application)
             // Loading speed up: Als het niet de eerste startup is en niks is geladen
             // -> ga er dan vanuit dat de server niet beschikbaar is
             if (isFirstSetup) {
-                if (isFirstSetup) {
+                /*if (isFirstSetup) {
                     _loadingResult.value = Activity.RESULT_CANCELED
                     return@launch
-                }
+                }*/
 
                 dataHelper.put(LocalDataHelper.Key.BOOL_ISFIRSTSETUP, false)
                 dataHelper.applyChanges()
