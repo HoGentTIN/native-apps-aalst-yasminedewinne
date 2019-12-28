@@ -12,8 +12,19 @@
     <string name="action_forgot_password">Wachtwoord Vergeten?</string>
 
 
+    <string name="hint_voornaam">Voornaam</string>
+    <string name="hint_familienaam">Familienaam</string>
     <string name="hint_email">Email</string>
+    <string name="hint_telnr">Telefoon Nr.</string>
+    <string name="hint_straatnaam">Straatnaam</string>
+    <string name="hint_huisnr">Huisnummer</string>
+    <string name="hint_postcode">Postcode</string>
+    <string name="hint_stad">Stad</string>
+    <string name="hint_land">Land</string>
     <string name="hint_wachtwoord">Wachtwoord</string>
+    <string name="hint_wachtwoord_herhalen">Wachtwoord Herhalen</string>
+
+    <string name="desc_verwijder_foto">Verwijder Foto</string>
 
     <string name="title_aanmelden">Aanmelden…</string>
     <string name="title_registreren">Registreren…</string>
@@ -32,7 +43,10 @@
 
     <!-- VALIDATION ERROR -->
     <string name="error_empty">Dit veld is verplicht</string>
-
+    <string name="error_invalid_email">Geef een geldige email in</string>
+    <string name="error_invalid_telnr">Geef een geldige telefoonnummer in</string>
+    <string name="error_invalid_password">Het wachtwoord moet minstens 6 tekens lang zijn</string>
+    <string name="error_invalid_passwordConfirm">De ingegeven wachtwoorden komen niet overeen</string>
     <string name="error_login_failed">Aanmelden mislukt, kijk email en wachtwoord na</string>
     <string name="error_register_failed">Registreren mislukt, kijk de ingevulde gegevens na</string>
 

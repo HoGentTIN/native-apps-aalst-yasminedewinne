@@ -5,5 +5,6 @@ data class User (
     var voornaam: String,
     var familienaam: String,
     var email: String,
-    var telNr: String
+    var telNr: String,
+    var adres: Adres
 )

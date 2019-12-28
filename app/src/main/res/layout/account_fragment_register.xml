@@ -18,6 +18,263 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!--<de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_register_profile"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="@dimen/padding_large"
+            android:src="@drawable/profile"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_registreren_clearPicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_remove_circle"
+            android:tint="@color/warnColor"
+            android:background="@null"
+            android:visibility="@{viewModel.canClearPicture ? View.VISIBLE : View.GONE}"
+            android:contentDescription="@string/desc_verwijder_foto"
+            app:layout_constraintStart_toEndOf="@+id/img_register_profile"
+            app:layout_constraintTop_toTopOf="@+id/img_register_profile" />-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_register_voornaam"
+            style="@style/Widget.MaterialComponents.TextInputLayout.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_xxlarge"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="@dimen/padding_xxlarge"
+            android:hint="@string/hint_voornaam"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_register_familienaam"
+            style="@style/Widget.MaterialComponents.TextInputLayout.Regular"
+            android:hint="@string/hint_familienaam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_xxlarge"
+            android:layout_marginTop="@dimen/padding_medium"
+            android:layout_marginEnd="@dimen/padding_xxlarge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_register_voornaam">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_register_email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_xxlarge"
+            android:layout_marginTop="@dimen/padding_xlarge"
+            android:layout_marginEnd="@dimen/padding_xxlarge"
+            android:hint="@string/hint_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_register_familienaam">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_register_telnr"
+            style="@style/Widget.MaterialComponents.TextInputLayout.Regular"
+            android:hint="@string/hint_telnr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_xxlarge"
+            android:layout_marginTop="@dimen/padding_medium"
+            android:layout_marginEnd="@dimen/padding_xxlarge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_register_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text|phone"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_register_straatnaam"
+            style="@style/Widget.MaterialComponents.TextInputLayout.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_xxlarge"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="@dimen/padding_xxlarge"
+            android:hint="@string/hint_straatnaam"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_register_telnr">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_register_huisnr"
+            style="@style/Widget.MaterialComponents.TextInputLayout.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_xxlarge"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/padding_xxlarge"
+            android:hint="@string/hint_huisnr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_register_straatnaam">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_register_postcode"
+            style="@style/Widget.MaterialComponents.TextInputLayout.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_xxlarge"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/padding_xxlarge"
+            android:hint="@string/hint_postcode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_register_huisnr">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_register_stad"
+            style="@style/Widget.MaterialComponents.TextInputLayout.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_xxlarge"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/padding_xxlarge"
+            android:hint="@string/hint_stad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_register_postcode">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_register_land"
+            style="@style/Widget.MaterialComponents.TextInputLayout.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_xxlarge"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/padding_xxlarge"
+            android:hint="@string/hint_land"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_register_stad">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_register_wachtwoord"
+            style="@style/Widget.MaterialComponents.TextInputLayout.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_xxlarge"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="@dimen/padding_xxlarge"
+            android:hint="@string/hint_wachtwoord"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_register_land">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_register_wachtwoord_herhalen"
+            style="@style/Widget.MaterialComponents.TextInputLayout.Regular"
+            android:hint="@string/hint_wachtwoord_herhalen"
+            app:endIconMode="password_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_xxlarge"
+            android:layout_marginTop="@dimen/padding_medium"
+            android:layout_marginEnd="@dimen/padding_xxlarge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_register_wachtwoord">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_registreren"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_xlarge"
+            android:layout_marginBottom="@dimen/padding_medium"
+            android:text="@string/action_register"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/txt_register_wachtwoord_herhalen"
+            app:layout_constraintStart_toStartOf="@+id/txt_register_wachtwoord_herhalen"
+            app:layout_constraintTop_toBottomOf="@+id/txt_register_wachtwoord_herhalen" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
    </ScrollView>
 </layout>

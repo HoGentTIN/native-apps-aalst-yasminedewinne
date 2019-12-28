@@ -83,6 +83,7 @@ dependencies {
     // Additional Libs
     implementation 'com.auth0.android:jwtdecode:1.4.0'
     implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
 
     //Testing
     testImplementation 'junit:junit:4.12'
