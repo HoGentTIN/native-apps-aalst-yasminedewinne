@@ -1,5 +1,6 @@
 package be.hogent.yasminedewinne.carwashapp.data.network
 
+import be.hogent.yasminedewinne.carwashapp.models.DTO.AfspraakDTO
 import be.hogent.yasminedewinne.carwashapp.models.domain.Afspraak
 import kotlinx.coroutines.Deferred
 import retrofit2.http.*
@@ -10,7 +11,7 @@ interface AfspraakApiService{
     fun getAfsprakenForUser(@Path("id")id: Int): Deferred<List<Afspraak>>
 
     @POST("afspraken")
-    fun postAfspraak(@Body afspraak: Afspraak): Deferred<Afspraak>
+    fun postAfspraak(@Body afspraak: AfspraakDTO): Deferred<AfspraakDTO>
 
     @DELETE("afspraken/{id}")
     fun deleteAfspraak(@Path("id")id: Int): Deferred<Afspraak>
