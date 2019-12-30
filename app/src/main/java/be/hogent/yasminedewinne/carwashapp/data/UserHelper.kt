@@ -27,7 +27,14 @@ class UserHelper(context: Context) {
         val voornaam = jwt.getClaim("voornaam").asString()!!
         val familienaam = jwt.getClaim("familienaam").asString()!!
         val telNr = jwt.getClaim("telNr").asString()!!
-        val adres = jwt.getClaim("adres").asObject(Adres::class.java)!!
+
+        val straatnaam = jwt.getClaim("straatnaam").asString()!!
+        val huisNr = jwt.getClaim("huisNr").asString()!!
+        val postcode = jwt.getClaim("postcode").asString()!!
+        val stad = jwt.getClaim("stad").asString()!!
+        val land = jwt.getClaim("land").asString()!!
+
+        val adres = Adres(huisNr, straatnaam, postcode, stad, land)
 
         return User(id, voornaam, familienaam, email, telNr, adres)
     }
