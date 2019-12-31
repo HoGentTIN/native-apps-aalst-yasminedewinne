@@ -24,12 +24,19 @@
     <string name="hint_wachtwoord">Wachtwoord</string>
     <string name="hint_wachtwoord_herhalen">Wachtwoord Herhalen</string>
 
+    <string name="hint_auto">Uw auto</string>
+    <string name="hint_tarief">Tarief</string>
+    <string name="hint_datum">Selecteer een datum</string>
+    <string name="hint_uur">Selecteer het uur</string>
+    <string name="hint_uitleg">Extra uitleg</string>
+
     <string name="desc_verwijder_foto">Verwijder Foto</string>
 
     <string name="title_aanmelden">Aanmelden…</string>
     <string name="title_registreren">Registreren…</string>
 
     <string name="welcome">"Welkom!"</string>
+    <string name="nieuweCarwash">Nieuwe carwash toevoegen</string>
 
     <!-- Loading -->
     <string name="title_error_loading">OEPS! Er ging iets mis</string>
