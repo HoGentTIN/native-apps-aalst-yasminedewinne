@@ -9,7 +9,7 @@ data class CarwashDTO(
 
     var aanbiederId: Int,
     var auto: String,
-    var tarief: Double,
+    var tarief: String,
     var takenUitlig: String,
     var datum: LocalDate,
     var beginUur: LocalTime

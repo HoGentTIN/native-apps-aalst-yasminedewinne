@@ -26,7 +26,7 @@ data class Carwash(
 
     var auto: String = "",
 
-    var tarief: Double = 0.0,
+    var tarief: String = "",
 
     var takenUitleg: String = "",
 
