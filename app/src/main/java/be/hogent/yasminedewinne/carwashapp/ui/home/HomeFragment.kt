@@ -6,17 +6,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
 
 import be.hogent.yasminedewinne.carwashapp.R
 import be.hogent.yasminedewinne.carwashapp.databinding.HomeFragmentMainBinding
+import be.hogent.yasminedewinne.carwashapp.models.domain.Carwash
 import be.hogent.yasminedewinne.carwashapp.viewmodels.HomeViewModel
-
+import be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.CarwashAdapter
+import be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.CarwashItemClickListener
+import com.google.android.material.snackbar.Snackbar
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding: HomeFragmentMainBinding
+    lateinit var carwashAdapter: CarwashAdapter
 
     private val viewModel: HomeViewModel by lazy {
         val activity = requireNotNull(this.activity) {
@@ -33,12 +39,33 @@ class HomeFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-       binding.btnHomeNieuweAanbieding.setOnClickListener(
+        carwashAdapter = CarwashAdapter(CarwashItemClickListener { carwashId ->
+            binding.viewModel?.setSelectedCarwash(carwashId)
+        })
+
+        binding.recyclerHomeCarwashes.layoutManager = LinearLayoutManager(context)
+        binding.recyclerHomeCarwashes.adapter = carwashAdapter
+
+        binding.btnHomeNieuweAanbieding.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_carwashFragment)
         )
+
+        startObservers()
 
         return binding.root
     }
 
+    private fun startObservers(){
 
+        binding.viewModel?.carwashes?.observe(this, Observer { carwashes: List<Carwash> ->
+            if(carwashes.isEmpty()){
+                Snackbar.make(view!!, "Er zijn geen nieuwe carwashes besschikbaar", Snackbar.LENGTH_LONG)
+
+                //Clear list
+                carwashAdapter.setList(arrayListOf())
+            }else{
+                carwashAdapter.setList(carwashes)
+            }
+        })
+    }
 }
