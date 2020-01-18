@@ -12432,11 +12432,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/yasminedewinne/Documents/Android/CarwashAPI/CarwashAPI/CarwashAPI.csproj",
+      "projectUniqueName": "/Users/yasminedewinne/Documents/Android/CarwashApp/API/CarwashAPI/CarwashAPI.csproj",
       "projectName": "CarwashAPI",
-      "projectPath": "/Users/yasminedewinne/Documents/Android/CarwashAPI/CarwashAPI/CarwashAPI.csproj",
+      "projectPath": "/Users/yasminedewinne/Documents/Android/CarwashApp/API/CarwashAPI/CarwashAPI.csproj",
       "packagesPath": "/Users/yasminedewinne/.nuget/packages/",
-      "outputPath": "/Users/yasminedewinne/Documents/Android/CarwashAPI/CarwashAPI/obj/",
+      "outputPath": "/Users/yasminedewinne/Documents/Android/CarwashApp/API/CarwashAPI/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
