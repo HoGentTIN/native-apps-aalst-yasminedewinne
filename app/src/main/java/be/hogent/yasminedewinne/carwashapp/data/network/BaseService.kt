@@ -39,7 +39,7 @@ object BaseService {
     private val BASE_URL: String
         get() {
             // De 10.0.2.2 of "localhost" url werkt enkel op emulator
-                return "https://10.0.2.2:5001/api/"
+                return "https://carwashapi20200630213929.azurewebsites.net/api/"
         }
 
     private val logInterceptor: HttpLoggingInterceptor

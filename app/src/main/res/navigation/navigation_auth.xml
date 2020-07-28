@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation_auth"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_auth"
     app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/loginFragment"
         android:name="be.hogent.yasminedewinne.carwashapp.ui.auth.LoginFragment"
-        android:label="LoginFragment" >
+        android:label="LoginFragment"
+        tools:layout="@layout/account_fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
@@ -14,5 +17,6 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="be.hogent.yasminedewinne.carwashapp.ui.auth.RegisterFragment"
-        android:label="RegisterFragment" />
+        android:label="RegisterFragment"
+        tools:layout="@layout/account_fragment_register"/>
 </navigation>
