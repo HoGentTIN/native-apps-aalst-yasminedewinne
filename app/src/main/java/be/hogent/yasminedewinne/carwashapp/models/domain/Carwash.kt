@@ -22,15 +22,17 @@ data class Carwash(
     @PrimaryKey(autoGenerate = false)
     var id: Int = 0,
 
-    var aanbiederId: Int = 0,
+    var tarief: Int = 0,
 
-    var auto: String = "",
-
-    var tarief: String = "",
-
-    var takenUitleg: String = "",
+    var takenlijst: String = "",
 
     var datum: LocalDate, // DB Format: yyyy-MM-dd
 
-    var beginUur: LocalTime // DB Format: HH:mm:ss
+    var beginTijd: LocalTime, // DB Format: HH:mm:ss
+
+    var eindTijd: LocalTime, // DB Format: HH:mm:ss
+
+    var aanbiederId: Int = 0,
+
+    var autoId: Int = 0
 )

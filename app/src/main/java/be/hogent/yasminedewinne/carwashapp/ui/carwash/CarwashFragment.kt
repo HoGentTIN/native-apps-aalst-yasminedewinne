@@ -43,7 +43,7 @@ class CarwashFragment : Fragment() {
 
         binding.btnCarwashBevestig.setOnClickListener {
             binding.viewModel?.auto?.value = binding.txtCarwashAuto.editText?.text.toString()
-            binding.viewModel?.tarief?.value = binding.txtCarwashTarief.editText?.text.toString()
+            //binding.viewModel?.tarief?.value = binding.txtCarwashTarief.editText?.text.
             binding.viewModel?.uitleg?.value = binding.txtCarwashUitleg.editText?.text.toString()
             binding.viewModel?.carwashAfwerken()
             Toast.makeText(this.context, "De carwash werd succesvol gepost! ", Toast.LENGTH_SHORT).show()

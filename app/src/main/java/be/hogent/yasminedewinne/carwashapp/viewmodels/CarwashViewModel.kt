@@ -15,7 +15,7 @@ class CarwashViewModel (application: Application): AndroidViewModel(application)
     private val carwashRepository = CarwashRepository(database.carwashDao)
 
     var auto = MutableLiveData<String>()
-    var tarief = MutableLiveData<String>()
+    var tarief = MutableLiveData<Int>()
     var uitleg = MutableLiveData<String>()
     var datum = MutableLiveData<LocalDate>()
     var beginUur = MutableLiveData<LocalTime>()
@@ -25,10 +25,12 @@ class CarwashViewModel (application: Application): AndroidViewModel(application)
             val carwash = CarwashDTO(
                 auto = auto.value!!,
                 tarief = tarief.value!!,
-                takenUitlig = uitleg.value!!,
+                takenlijst = uitleg.value!!,
                 datum = datum.value!!,
-                beginUur =  beginUur.value!!,
-                aanbiederId = 0
+                beginTijd =  beginUur.value!!,
+                eindTijd = LocalTime.now(),
+                aanbiederId = 0,
+                autoId = 0
             )
             carwashRepository.postCarwash(carwash)
         }

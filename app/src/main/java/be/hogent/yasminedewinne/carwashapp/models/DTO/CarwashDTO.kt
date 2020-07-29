@@ -7,22 +7,25 @@ import java.time.LocalTime
 data class CarwashDTO(
     val id: Int = 0,
 
-    var aanbiederId: Int,
     var auto: String,
-    var tarief: String,
-    var takenUitlig: String,
+    var tarief: Int,
+    var takenlijst: String,
     var datum: LocalDate,
-    var beginUur: LocalTime
+    var beginTijd: LocalTime,
+    var eindTijd: LocalTime,
+    var aanbiederId: Int,
+    var autoId: Int
 ) {
     fun toModel(): Carwash{
         return Carwash(
             id = id,
-            aanbiederId = aanbiederId,
-            auto = auto,
             tarief = tarief,
-            takenUitleg = takenUitlig,
+            takenlijst = takenlijst,
             datum = datum,
-            beginUur = beginUur
+            beginTijd = beginTijd,
+            eindTijd = eindTijd,
+            aanbiederId = aanbiederId,
+            autoId = autoId
         )
     }
 }

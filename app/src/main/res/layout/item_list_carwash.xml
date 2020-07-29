@@ -19,13 +19,14 @@
         android:orientation="vertical"
         android:padding="@dimen/padding_medium">
 
+        <!--Hier moet carwash.auto komen -->
         <TextView
             android:id="@+id/txt_carwashItem_auto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="@{carwash.auto}"
+            android:text="@{String.format( @string/label_tarief, carwash.tarief)}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="BMW X1" />
@@ -57,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            app:beginTime="@{carwash.beginUur}"
+            app:beginTime="@{carwash.beginTijd}"
             app:layout_constraintStart_toEndOf="@+id/txt_carwashItem_datum"
             app:layout_constraintTop_toTopOf="@+id/txt_carwashItem_datum"
             tools:text="17:00"/>
@@ -68,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:text="@{carwash.takenUitleg}"
+            android:text="@{carwash.takenlijst}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_carwashItem_datum"
             tools:text="De taken zijn: Wassen, stofzuigen en waxen. "/>
