@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.*
 import be.hogent.yasminedewinne.carwashapp.data.database.getDatabase
 import be.hogent.yasminedewinne.carwashapp.models.DTO.CarwashDTO
+import be.hogent.yasminedewinne.carwashapp.models.domain.Auto
 import be.hogent.yasminedewinne.carwashapp.models.domain.repositories.CarwashRepository
 import kotlinx.coroutines.launch
 import java.time.LocalDate
@@ -23,13 +24,13 @@ class CarwashViewModel (application: Application): AndroidViewModel(application)
     fun carwashAfwerken(){
         viewModelScope.launch {
             val carwash = CarwashDTO(
-                auto = auto.value!!,
+                //auto = Auto(),
                 tarief = tarief.value!!,
                 takenlijst = uitleg.value!!,
                 datum = datum.value!!,
                 beginTijd =  beginUur.value!!,
                 eindTijd = LocalTime.now(),
-                aanbiederId = 0,
+                gebruikerId = 0,
                 autoId = 0
             )
             carwashRepository.postCarwash(carwash)

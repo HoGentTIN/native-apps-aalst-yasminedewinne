@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="@{String.format( @string/label_tarief, carwash.tarief)}"
+            android:text="@{String.format(@string/label_auto, carwash.autoMerk, carwash.autoNaam)}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="BMW X1" />
@@ -54,7 +54,7 @@
             tools:text="01/01/2020"/>
 
         <TextView
-            android:id="@+id/txt_carwashItem_uur"
+            android:id="@+id/txt_carwashItem_beginTijd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -62,6 +62,16 @@
             app:layout_constraintStart_toEndOf="@+id/txt_carwashItem_datum"
             app:layout_constraintTop_toTopOf="@+id/txt_carwashItem_datum"
             tools:text="17:00"/>
+
+        <TextView
+            android:id="@+id/txt_carwashItem_eindTijd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:beginTime="@{carwash.eindTijd}"
+            app:layout_constraintStart_toEndOf="@id/txt_carwashItem_beginTijd"
+            app:layout_constraintTop_toTopOf="@id/txt_carwashItem_beginTijd"
+            tools:text="20:00"/>
 
         <TextView
             android:id="@+id/txt_carwashItem_taken"

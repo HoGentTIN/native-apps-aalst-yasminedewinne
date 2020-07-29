@@ -12,6 +12,7 @@
     <string name="action_forgot_password">Wachtwoord Vergeten?</string>
 
     <string name="label_tarief">€ %s</string>
+    <string name="label_auto">%s %s</string>
 
     <string name="hint_voornaam">Voornaam</string>
     <string name="hint_familienaam">Familienaam</string>

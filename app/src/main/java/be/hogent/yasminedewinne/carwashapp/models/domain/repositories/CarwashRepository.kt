@@ -18,7 +18,7 @@ class CarwashRepository(private val carwashDao: CarwashDao) {
         val user = userHelper.getSignedInUser()
         if(user != null){
             val id = user.id
-            carwash.aanbiederId = id
+            carwash.gebruikerId = id
 
             return withContext(Dispatchers.IO){
                 val call = CarwashService.HTTP.postCarwash(carwash)
@@ -54,7 +54,7 @@ class CarwashRepository(private val carwashDao: CarwashDao) {
             try {
                 val carwashes = carwashCall.await()
                 carwashDao.clear()
-                carwashDao.insertAll(*carwashes.toTypedArray())
+                carwashDao.insertAll(*carwashes.map { x -> x.toModel() }.toTypedArray())
 
                 true
             }

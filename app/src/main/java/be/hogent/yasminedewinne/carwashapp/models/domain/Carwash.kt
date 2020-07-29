@@ -32,7 +32,9 @@ data class Carwash(
 
     var eindTijd: LocalTime, // DB Format: HH:mm:ss
 
-    var aanbiederId: Int = 0,
+    var gebruikerId: Int = 0,
 
-    var autoId: Int = 0
+    var autoId: Int,
+    var autoMerk: String,
+    var autoNaam: String
 )

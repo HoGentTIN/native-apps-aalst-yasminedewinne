@@ -8,7 +8,7 @@ import retrofit2.http.*
 interface CarwashApiService{
 
     @GET("carwashes")
-    fun getAllCarwashes(): Deferred<List<Carwash>>
+    fun getAllCarwashes(): Deferred<List<CarwashDTO>>
 
     @GET("carwashes/stad")
     fun getCarwashesByStad(@Path("stad")stad: String): Deferred<List<Carwash>>
