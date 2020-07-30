@@ -29,6 +29,7 @@ data class CarwashDTO(
             eindTijd = eindTijd,
             gebruikerId = gebruiker?.id ?: 0,
             gebruikerStad = gebruiker?.adres?.stad ?: "",
+            gebruikerAdres = gebruiker?.adres?.toString() ?: "",
             autoId = auto?.id ?: 0,
             autoMerk = auto?.merk ?: "",
             autoNaam = auto?.naam ?: ""

@@ -34,6 +34,7 @@ data class Carwash(
 
     var gebruikerId: Int,
     var gebruikerStad: String,
+    var gebruikerAdres: String,
 
     var autoId: Int,
     var autoMerk: String,

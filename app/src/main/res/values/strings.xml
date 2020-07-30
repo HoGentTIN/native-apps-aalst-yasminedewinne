@@ -42,6 +42,9 @@
     <string name="welcome">"Welkom!"</string>
     <string name="nieuweCarwash">Nieuwe carwash toevoegen</string>
 
+    <string name="header_afspraken_komende">Komende afspraken</string>
+    <string name="header_afspraken_historiek">Oude afspraken</string>
+
     <!-- Loading -->
     <string name="title_error_loading">OEPS! Er ging iets mis</string>
     <string name="loading_motd">Alles word klaar gezet voor gebruik</string>
