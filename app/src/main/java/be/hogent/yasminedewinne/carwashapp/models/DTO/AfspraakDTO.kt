@@ -13,16 +13,19 @@ data class AfspraakDTO(
     var gebruiker: User? = null,
 
     var carwashId: Int,
-    var carwash: Carwash? = null
+    var carwash: CarwashDTO? = null
 ) {
     fun toModel(): Afspraak{
         return Afspraak(
             id = id,
             gebruikerId = gebruikerId,
             carwashId = carwash?.id ?: 0,
-            carwashAdres = carwash?.gebruikerAdres ?: "",
-            carwashMerk = carwash?.autoMerk ?: "",
-            carwashAuto = carwash?.autoNaam ?: "",
+            //carwashAdres = carwash?.gebruikerAdres ?: "",
+            carwashAdres = carwash?.gebruiker?.adres?.straatNaam ?: "",
+            //carwashMerk = carwash?.autoMerk ?: "",
+            carwashMerk = carwash?.auto?.merk ?: "",
+            //carwashAuto = carwash?.autoNaam ?: "",
+            carwashAuto = carwash?.auto?.naam ?: "",
             carwashTarief = carwash?.tarief ?: 0,
             carwashDatum = carwash?.datum ?: LocalDate.now(),
             carwashBeginTijd = carwash?.beginTijd ?: LocalTime.now(),

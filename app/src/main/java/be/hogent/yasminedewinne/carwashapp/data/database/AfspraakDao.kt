@@ -18,6 +18,9 @@ interface AfspraakDao {
     @Query("DELETE FROM afspraken")
     fun clear(): Int
 
-    @Query("SELECT * FROM afspraken")
-    fun getAfspraken(): LiveData<List<Afspraak>>
+    @Query("SELECT * FROM afspraken WHERE carwashDatum >= date('now') ORDER BY carwashDatum ASC")
+    fun getKomendeAfspraken(): LiveData<List<Afspraak>>
+
+    @Query("SELECT * FROM afspraken WHERE carwashDatum < date('now') ORDER BY carwashDatum ASC")
+    fun getAfgelopenAfspraken(): LiveData<List<Afspraak>>
 }

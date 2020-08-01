@@ -8,7 +8,7 @@ import retrofit2.http.*
 interface AfspraakApiService{
 
     @GET("afspraken/gebruiker/{id}")
-    fun getAfsprakenForUser(@Path("id")id: Int): Deferred<List<Afspraak>>
+    fun getAfsprakenForUser(@Path("id")id: Int): Deferred<List<AfspraakDTO>>
 
     @POST("afspraken")
     fun postAfspraak(@Body afspraak: AfspraakDTO): Deferred<AfspraakDTO>

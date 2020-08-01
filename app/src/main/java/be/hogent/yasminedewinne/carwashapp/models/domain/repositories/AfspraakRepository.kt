@@ -11,7 +11,8 @@ import java.io.InterruptedIOException
 
 class AfspraakRepository(private val afspraakDao: AfspraakDao) {
 
-    val afspraken = afspraakDao.getAfspraken()
+    val komendeAfspraken = afspraakDao.getKomendeAfspraken()
+    val afgelopenAfspraken = afspraakDao.getAfgelopenAfspraken()
 
     suspend fun postAfspraak(afspraak: AfspraakDTO): Int{
         val userHelper = App.getUserHelper()
@@ -58,7 +59,7 @@ class AfspraakRepository(private val afspraakDao: AfspraakDao) {
                 val afsprakenCall = AfspraakService.HTTP.getAfsprakenForUser((id))
                 try {
                     val afspraken = afsprakenCall.await()
-                    afspraakDao.insertAll(*afspraken.toTypedArray())
+                    afspraakDao.insertAll(*afspraken.map { x -> x.toModel() }.toTypedArray())
 
                     true
                 }catch (e:HttpException){
