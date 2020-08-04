@@ -5,12 +5,14 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import be.hogent.yasminedewinne.carwashapp.models.domain.Afspraak
+import be.hogent.yasminedewinne.carwashapp.models.domain.Auto
 import be.hogent.yasminedewinne.carwashapp.models.domain.Carwash
 
-@Database(entities = [Carwash::class, Afspraak::class], version = 1, exportSchema = false)
+@Database(entities = [Carwash::class, Afspraak::class, Auto::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase(){
     abstract val carwashDao: CarwashDao
     abstract val afspraakDao: AfspraakDao
+    abstract val autoDao: AutoDao
 }
 
 @Volatile

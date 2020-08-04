@@ -6,6 +6,7 @@ import androidx.lifecycle.*
 import be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper
 import be.hogent.yasminedewinne.carwashapp.data.database.getDatabase
 import be.hogent.yasminedewinne.carwashapp.models.domain.repositories.AfspraakRepository
+import be.hogent.yasminedewinne.carwashapp.models.domain.repositories.AutoRepository
 import be.hogent.yasminedewinne.carwashapp.models.domain.repositories.CarwashRepository
 import kotlinx.coroutines.launch
 
@@ -14,6 +15,7 @@ class LoadingViewModel(application: Application) : AndroidViewModel(application)
     private val database = getDatabase(application)
     private val carwashRepository = CarwashRepository(database.carwashDao)
     private val afspraakRepository = AfspraakRepository(database.afspraakDao)
+    private val autoRepository = AutoRepository(database.autoDao)
 
     private val dataHelper = LocalDataHelper("setup", application)
 
@@ -28,10 +30,11 @@ class LoadingViewModel(application: Application) : AndroidViewModel(application)
             val isFirstSetup = dataHelper.getBoolean(LocalDataHelper.Key.BOOL_ISFIRSTSETUP, defaultValue = true)
             val result1 = carwashRepository.loadCarwashes()
             val result2 = afspraakRepository.loadAfspraken()
+            val result3 = autoRepository.loadAutos()
 
             // Loading speed up: Als het niet de eerste startup is en niks is geladen
             // -> ga er dan vanuit dat de server niet beschikbaar is
-            if (result1 || result2 || isFirstSetup) {
+            if (result1 || result2 || result3 || isFirstSetup) {
                 /*if (isFirstSetup) {
                     _loadingResult.value = Activity.RESULT_CANCELED
                     return@launch

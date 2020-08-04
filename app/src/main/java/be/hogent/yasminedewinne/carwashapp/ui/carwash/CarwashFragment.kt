@@ -10,11 +10,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 
 import be.hogent.yasminedewinne.carwashapp.R
 import be.hogent.yasminedewinne.carwashapp.databinding.CarwashFragmentMainBinding
 import be.hogent.yasminedewinne.carwashapp.viewmodels.CarwashViewModel
+import be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.AutoAdapter
 import com.mobsandgeeks.saripaar.Validator
 import com.mobsandgeeks.saripaar.annotation.NotEmpty
 import java.time.LocalDate
@@ -40,9 +42,10 @@ class CarwashFragment : Fragment() {
         binding.lifecycleOwner = this
 
         registerListeners()
+        startObservers()
 
         binding.btnCarwashBevestig.setOnClickListener {
-            binding.viewModel?.auto?.value = binding.txtCarwashAuto.editText?.text.toString()
+            //binding.viewModel?.auto?.value = binding.txtCarwash.editText?.text.toString()
             //binding.viewModel?.tarief?.value = binding.txtCarwashTarief.editText?.text.
             binding.viewModel?.uitleg?.value = binding.txtCarwashUitleg.editText?.text.toString()
             binding.viewModel?.carwashAfwerken()
@@ -50,6 +53,14 @@ class CarwashFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    private fun startObservers() {
+        binding.viewModel?.autos?.observe(this, Observer { autos ->
+            val adapter = AutoAdapter(requireContext(), autos)
+            binding.spinnerCarwashAuto.adapter = adapter
+            binding.spinnerCarwashAuto.setSelection(0)
+        })
     }
 
     private fun registerListeners(){
@@ -68,7 +79,7 @@ class CarwashFragment : Fragment() {
             DatePickerDialog(context!!, dateSetListener, initTime.year, initTime.monthValue-1, initTime.dayOfMonth).show()
         }
 
-        binding.btnCarwashUur.setOnClickListener {
+        binding.btnCarwashBeginTijd.setOnClickListener {
             var initTime = LocalTime.now()
             val currentTime = binding.viewModel?.beginUur?.value
             if (currentTime != null)
@@ -81,5 +92,20 @@ class CarwashFragment : Fragment() {
             }
             TimePickerDialog(context, timeSetListener, initTime.hour, initTime.minute, true).show()
         }
+
+        binding.btnCarwashEindTijd.setOnClickListener {
+            var initTime = LocalTime.now()
+            val currentTime = binding.viewModel?.eindUur?.value
+            if(currentTime != null)
+                initTime = currentTime
+
+            val timeSetListener = TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
+                val time = LocalTime.of(hourOfDay, minute)
+
+                binding.viewModel?.eindUur?.value = time
+            }
+            TimePickerDialog(context, timeSetListener, initTime.hour, initTime.minute, true).show()
+        }
+
     }
 }

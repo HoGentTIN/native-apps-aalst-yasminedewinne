@@ -30,7 +30,8 @@
     <string name="hint_auto">Uw auto</string>
     <string name="hint_tarief">Tarief</string>
     <string name="hint_datum">Selecteer een datum</string>
-    <string name="hint_uur">Selecteer het uur</string>
+    <string name="hint_beginTijd">Van</string>
+    <string name="hint_eindTijd">Tot</string>
     <string name="hint_uitleg">Extra uitleg</string>
     <string name="hint_bevestig">Plaatsen</string>
 
