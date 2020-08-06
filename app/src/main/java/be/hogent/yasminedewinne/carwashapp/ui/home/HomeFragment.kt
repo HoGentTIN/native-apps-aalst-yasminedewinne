@@ -50,9 +50,16 @@ class HomeFragment : Fragment() {
             Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_carwashFragment)
         )
 
+        registerListeners()
         startObservers()
 
         return binding.root
+    }
+
+    private fun registerListeners() {
+        binding.pullrefreshMain.setOnRefreshListener {
+            binding.viewModel?.refreshData()
+        }
     }
 
     private fun startObservers(){
@@ -66,6 +73,11 @@ class HomeFragment : Fragment() {
             }else{
                 carwashAdapter.setList(carwashes)
             }
+        })
+
+        binding.viewModel?.isLoading?.observe(this, Observer { isLoading: Boolean? ->
+            if (isLoading != null && !isLoading)
+                binding.pullrefreshMain.isRefreshing = false
         })
     }
 }

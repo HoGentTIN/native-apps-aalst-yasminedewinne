@@ -1,11 +1,10 @@
 package be.hogent.yasminedewinne.carwashapp.viewmodels
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.*
 import be.hogent.yasminedewinne.carwashapp.data.database.getDatabase
 import be.hogent.yasminedewinne.carwashapp.models.domain.repositories.AfspraakRepository
+import kotlinx.coroutines.launch
 
 class AfspraakViewModel(application: Application): AndroidViewModel(application) {
 
@@ -14,6 +13,19 @@ class AfspraakViewModel(application: Application): AndroidViewModel(application)
 
     val komendeAfspraken = afspraakRepository.komendeAfspraken
     val afgelopenAfspraken = afspraakRepository.afgelopenAfspraken
+
+    private val _isLoading = MutableLiveData<Boolean>(null)
+    val isLoading: LiveData<Boolean>
+        get() = _isLoading
+
+    fun refreshData() {
+        viewModelScope.launch {
+            _isLoading.value = true
+            afspraakRepository.loadAfspraken()
+            _isLoading.value = false
+            _isLoading.value = null
+        }
+    }
 
     fun setSelectedAfspraak(afspraakId: Int) {
 

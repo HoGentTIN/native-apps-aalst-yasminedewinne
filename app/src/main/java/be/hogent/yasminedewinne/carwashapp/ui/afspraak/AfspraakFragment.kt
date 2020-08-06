@@ -57,9 +57,16 @@ class AfspraakFragment : Fragment() {
         binding.recyclerAfsprakenHistoriek.layoutManager = LinearLayoutManager(context)
         binding.recyclerAfsprakenHistoriek.adapter = afgelopenAdapter
 
+        registerListeners()
         startObservers()
 
         return binding.root
+    }
+
+    private fun registerListeners() {
+        binding.pullrefreshAfspraken.setOnRefreshListener {
+            binding.viewModel?.refreshData()
+        }
     }
 
     private fun startObservers(){
@@ -69,6 +76,11 @@ class AfspraakFragment : Fragment() {
 
         binding.viewModel?.afgelopenAfspraken?.observe(this, Observer { afgelopen: List<Afspraak> ->
             afgelopenAdapter.setList(afgelopen)
+        })
+
+        binding.viewModel?.isLoading?.observe(this, Observer { isLoading: Boolean? ->
+            if (isLoading != null && !isLoading)
+                binding.pullrefreshAfspraken.isRefreshing = false
         })
     }
 
