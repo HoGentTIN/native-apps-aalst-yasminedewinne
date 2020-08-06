@@ -19,7 +19,7 @@ class CarwashViewModel (application: Application): AndroidViewModel(application)
 
     val autos = autoRepository.autosPerUser
 
-    var auto = MutableLiveData<String>()
+    var autoId = MutableLiveData<Int>()
     var tarief = MutableLiveData<Int>()
     var uitleg = MutableLiveData<String>()
     var datum = MutableLiveData<LocalDate>()
@@ -29,14 +29,13 @@ class CarwashViewModel (application: Application): AndroidViewModel(application)
     fun carwashAfwerken(){
         viewModelScope.launch {
             val carwash = CarwashDTO(
-                //auto = Auto(),
                 tarief = tarief.value!!,
                 takenlijst = uitleg.value!!,
                 datum = datum.value!!,
                 beginTijd =  beginUur.value!!,
-                eindTijd = LocalTime.now(),
-                gebruikerId = 0,
-                autoId = 0
+                eindTijd = eindUur.value!!,
+                gebruikerId = 0, //wordt in de repository ingesteld
+                autoId = autoId.value!!
             )
             carwashRepository.postCarwash(carwash)
         }

@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -15,6 +17,7 @@ import androidx.lifecycle.ViewModelProviders
 
 import be.hogent.yasminedewinne.carwashapp.R
 import be.hogent.yasminedewinne.carwashapp.databinding.CarwashFragmentMainBinding
+import be.hogent.yasminedewinne.carwashapp.models.domain.Auto
 import be.hogent.yasminedewinne.carwashapp.viewmodels.CarwashViewModel
 import be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.AutoAdapter
 import com.mobsandgeeks.saripaar.Validator
@@ -45,8 +48,7 @@ class CarwashFragment : Fragment() {
         startObservers()
 
         binding.btnCarwashBevestig.setOnClickListener {
-            //binding.viewModel?.auto?.value = binding.txtCarwash.editText?.text.toString()
-            //binding.viewModel?.tarief?.value = binding.txtCarwashTarief.editText?.text.
+            binding.viewModel?.tarief?.value = binding.txtCarwashTarief.editText?.text.toString().toInt()
             binding.viewModel?.uitleg?.value = binding.txtCarwashUitleg.editText?.text.toString()
             binding.viewModel?.carwashAfwerken()
             Toast.makeText(this.context, "De carwash werd succesvol gepost! ", Toast.LENGTH_SHORT).show()
@@ -105,6 +107,15 @@ class CarwashFragment : Fragment() {
                 binding.viewModel?.eindUur?.value = time
             }
             TimePickerDialog(context, timeSetListener, initTime.hour, initTime.minute, true).show()
+        }
+
+        binding.spinnerCarwashAuto.onItemSelectedListener = object : OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+
+            override fun onItemSelected( parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                val auto = binding.spinnerCarwashAuto.selectedItem as Auto
+                binding.viewModel?.autoId?.value = auto.id
+            }
         }
 
     }
