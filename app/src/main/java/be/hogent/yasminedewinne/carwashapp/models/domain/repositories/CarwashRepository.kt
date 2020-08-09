@@ -4,6 +4,7 @@ import be.hogent.yasminedewinne.carwashapp.App
 import be.hogent.yasminedewinne.carwashapp.data.database.CarwashDao
 import be.hogent.yasminedewinne.carwashapp.data.network.CarwashService
 import be.hogent.yasminedewinne.carwashapp.models.DTO.CarwashDTO
+import be.hogent.yasminedewinne.carwashapp.models.domain.Carwash
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
@@ -12,6 +13,12 @@ import java.io.InterruptedIOException
 class CarwashRepository(private val carwashDao: CarwashDao) {
 
     val carwashes = carwashDao.getCarwashes()
+
+    suspend fun getById(id: Int): Carwash {
+        return withContext(Dispatchers.IO) {
+            carwashDao.getById(id)
+        }
+    }
 
     suspend fun postCarwash(carwash: CarwashDTO): Int{
         val userHelper = App.getUserHelper()

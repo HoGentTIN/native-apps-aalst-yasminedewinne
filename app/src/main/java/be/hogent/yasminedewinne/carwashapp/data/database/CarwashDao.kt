@@ -20,5 +20,8 @@ interface CarwashDao {
 
     @Query("SELECT * FROM carwashes ORDER BY datum ASC")
     fun getCarwashes(): LiveData<List<Carwash>>
+
+    @Query("SELECT * FROM carwashes WHERE id = :id")
+    fun getById(id: Int): Carwash
 }
 

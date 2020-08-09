@@ -14,6 +14,7 @@
     <string name="label_tarief">€ %s</string>
     <string name="label_auto">%s %s</string>
     <string name="label_stad">Regio %s</string>
+    <string name="label_tijdstip">%s - %s</string>
 
     <string name="hint_voornaam">Voornaam</string>
     <string name="hint_familienaam">Familienaam</string>
@@ -40,6 +41,12 @@
     <string name="title_aanmelden">Aanmelden…</string>
     <string name="title_registreren">Registreren…</string>
     <string name="title_afspraken">Overzicht afspraken</string>
+    <string name="title_carwash_details">Details van de carwash:</string>
+    <string name="title_auto">Auto:</string>
+    <string name="title_locatie">Locatie:</string>
+    <string name="title_datum">Datum:</string>
+    <string name="title_tijdstip">Tijdstip:</string>
+    <string name="vraag_afspraak">Wenst u voor deze carwash een afspraak te maken en hier € %s mee te verdienen?</string>
 
     <string name="welcome">"Welkom!"</string>
     <string name="nieuweCarwash">Nieuwe carwash toevoegen</string>

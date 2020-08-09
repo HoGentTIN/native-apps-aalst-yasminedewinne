@@ -2,10 +2,13 @@ package be.hogent.yasminedewinne.carwashapp.ui.home
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
@@ -40,7 +43,10 @@ class HomeFragment : Fragment() {
         binding.lifecycleOwner = this
 
         carwashAdapter = CarwashAdapter(CarwashItemClickListener { carwashId ->
-            binding.viewModel?.setSelectedCarwash(carwashId)
+            //binding.viewModel?.setSelectedCarwash(carwashId)
+            val dialog = CarwashDetailsDialogFragment(carwashId)
+            val fm = this.fragmentManager
+            dialog.show(fm!!, "")
         })
 
         binding.recyclerHomeCarwashes.layoutManager = LinearLayoutManager(context)
