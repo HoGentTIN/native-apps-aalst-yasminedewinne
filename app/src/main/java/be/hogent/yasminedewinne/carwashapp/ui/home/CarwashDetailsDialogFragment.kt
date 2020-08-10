@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
@@ -14,6 +15,7 @@ import androidx.lifecycle.ViewModelProviders
 import be.hogent.yasminedewinne.carwashapp.R
 import be.hogent.yasminedewinne.carwashapp.databinding.FragmentCarwashDetailsDialogBinding
 import be.hogent.yasminedewinne.carwashapp.viewmodels.CarwashDetailsDialogViewModel
+import kotlinx.android.synthetic.main.fragment_carwash_details_dialog.*
 
 /**
  * A simple [Fragment] subclass.
@@ -41,21 +43,20 @@ class CarwashDetailsDialogFragment(carwashId: Int) : DialogFragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
+        binding.btnAfspraakMaken.setOnClickListener {
+            binding.viewModel?.afspraakAfwerken()
+            Toast.makeText(this.context, "De afspraak werd succesvol geplaatst! ", Toast.LENGTH_SHORT).show()
+            this.dialog?.dismiss()
+        }
+
+        binding.btnAnnuleren.setOnClickListener {
+            this.dialog?.cancel()
+        }
+
         return binding.root
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        /*return activity?.let {
-
-            val builder = AlertDialog.Builder(it)
-            val inflater = requireActivity().layoutInflater
-
-            builder.setView(inflater.inflate(R.layout.fragment_carwash_details_dialog, null))
-
-
-            builder.create()
-
-        }?: throw IllegalStateException("Activity cannot be null")*/
         val dialog = super.onCreateDialog(savedInstanceState)
         return dialog
     }

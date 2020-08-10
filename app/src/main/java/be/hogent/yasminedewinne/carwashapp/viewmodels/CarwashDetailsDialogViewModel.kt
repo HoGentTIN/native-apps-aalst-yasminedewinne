@@ -3,7 +3,9 @@ package be.hogent.yasminedewinne.carwashapp.viewmodels
 import android.app.Application
 import androidx.lifecycle.*
 import be.hogent.yasminedewinne.carwashapp.data.database.getDatabase
+import be.hogent.yasminedewinne.carwashapp.models.DTO.AfspraakDTO
 import be.hogent.yasminedewinne.carwashapp.models.domain.Carwash
+import be.hogent.yasminedewinne.carwashapp.models.domain.repositories.AfspraakRepository
 import be.hogent.yasminedewinne.carwashapp.models.domain.repositories.CarwashRepository
 import kotlinx.coroutines.launch
 
@@ -11,6 +13,7 @@ class CarwashDetailsDialogViewModel(application:Application, carwashId: Int) : A
 
     private val database = getDatabase(application)
     private val carwashRepository = CarwashRepository(database.carwashDao)
+    private val afspraakRepository = AfspraakRepository(database.afspraakDao)
 
     private val _carwash = MutableLiveData<Carwash>()
     val carwash: LiveData<Carwash>
@@ -20,6 +23,16 @@ class CarwashDetailsDialogViewModel(application:Application, carwashId: Int) : A
         viewModelScope.launch {
             val carwash = carwashRepository.getById(carwashId)
             _carwash.value = carwash
+        }
+    }
+
+    fun afspraakAfwerken(){
+        viewModelScope.launch {
+            val afspraak = AfspraakDTO(
+                carwashId = carwash.value?.id!!,
+                gebruikerId = 0
+            )
+            afspraakRepository.postAfspraak(afspraak)
         }
     }
 

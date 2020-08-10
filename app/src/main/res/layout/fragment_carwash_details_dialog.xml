@@ -45,7 +45,8 @@
         android:layout_marginStart="8dp"
         android:text="@{String.format(@string/label_auto, viewModel.carwash.autoMerk, viewModel.carwash.autoNaam)}"
         app:layout_constraintStart_toEndOf="@+id/txt_title_auto"
-        app:layout_constraintTop_toTopOf="@id/txt_title_auto" />
+        app:layout_constraintTop_toTopOf="@id/txt_title_auto"
+        tools:text="BMW X1"/>
 
     <TextView
         android:id="@+id/txt_title_locatie"
@@ -65,7 +66,8 @@
         android:layout_marginStart="8dp"
         android:text="@{String.format(@string/label_stad, viewModel.carwash.gebruikerStad)}"
         app:layout_constraintStart_toEndOf="@id/txt_title_locatie"
-        app:layout_constraintTop_toTopOf="@id/txt_title_locatie" />
+        app:layout_constraintTop_toTopOf="@id/txt_title_locatie"
+        tools:text="Regio Aalst"/>
 
     <TextView
         android:id="@+id/txt_title_datum"
@@ -85,7 +87,8 @@
         android:layout_marginStart="8dp"
         app:date="@{viewModel.carwash.datum}"
         app:layout_constraintStart_toEndOf="@id/txt_title_datum"
-        app:layout_constraintTop_toTopOf="@id/txt_title_datum" />
+        app:layout_constraintTop_toTopOf="@id/txt_title_datum"
+        tools:text="01/01/2020"/>
 
     <TextView
         android:id="@+id/txt_title_tijdstip"
@@ -105,7 +108,8 @@
         android:layout_marginStart="8dp"
         android:text="@{String.format(@string/label_tijdstip, viewModel.carwash.beginTijd, viewModel.carwash.eindTijd)}"
         app:layout_constraintStart_toEndOf="@id/txt_title_tijdstip"
-        app:layout_constraintTop_toTopOf="@id/txt_title_tijdstip" />
+        app:layout_constraintTop_toTopOf="@id/txt_title_tijdstip"
+        tools:text="14:00 - 16:00"/>
 
     <TextView
         android:id="@+id/txt_vraag_afspraak"
@@ -116,10 +120,28 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:text="@{String.format(@string/vraag_afspraak, viewModel.carwash.tarief)}"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt_title_tijdstip" />
+
+    <Button
+        android:id="@+id/btn_annuleren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/annuleren"
+        app:layout_constraintEnd_toStartOf="@id/btn_afspraak_maken"
+        app:layout_constraintTop_toBottomOf="@id/txt_vraag_afspraak" />
+
+    <Button
+        android:id="@+id/btn_afspraak_maken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/afspraak_maken"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_annuleren" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

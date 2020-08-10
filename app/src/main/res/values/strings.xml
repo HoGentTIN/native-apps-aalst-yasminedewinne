@@ -50,6 +50,8 @@
 
     <string name="welcome">"Welkom!"</string>
     <string name="nieuweCarwash">Nieuwe carwash toevoegen</string>
+    <string name="afspraak_maken">Afspraak maken</string>
+    <string name="annuleren">Annuleren</string>
 
     <string name="header_afspraken_komende">Komende afspraken</string>
     <string name="header_afspraken_historiek">Oude afspraken</string>
