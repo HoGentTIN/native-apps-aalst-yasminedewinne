@@ -47,11 +47,15 @@
     <string name="title_datum">Datum:</string>
     <string name="title_tijdstip">Tijdstip:</string>
     <string name="vraag_afspraak">Wenst u voor deze carwash een afspraak te maken en hier € %s mee te verdienen?</string>
+    <string name="title_afspraak_details">Details van uw afspraak:</string>
+    <string name="title_tarief">Tarief:</string>
 
     <string name="welcome">"Welkom!"</string>
     <string name="nieuweCarwash">Nieuwe carwash toevoegen</string>
     <string name="afspraak_maken">Afspraak maken</string>
     <string name="annuleren">Annuleren</string>
+    <string name="sluiten">Sluiten</string>
+    <string name="verwijderen">Verwijderen</string>
 
     <string name="header_afspraken_komende">Komende afspraken</string>
     <string name="header_afspraken_historiek">Oude afspraken</string>

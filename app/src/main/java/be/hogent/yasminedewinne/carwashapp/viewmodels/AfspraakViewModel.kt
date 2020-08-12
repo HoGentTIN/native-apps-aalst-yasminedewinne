@@ -27,10 +27,6 @@ class AfspraakViewModel(application: Application): AndroidViewModel(application)
         }
     }
 
-    fun setSelectedAfspraak(afspraakId: Int) {
-
-    }
-
     class Factory(private val application: Application) : ViewModelProvider.Factory {
 
         @Suppress("unchecked_cast")

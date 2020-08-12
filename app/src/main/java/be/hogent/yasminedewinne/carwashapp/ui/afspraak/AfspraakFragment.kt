@@ -44,11 +44,15 @@ class AfspraakFragment : Fragment() {
         binding.lifecycleOwner = this
 
         komendeAdapter = AfspraakAdapter(AfspraakItemClickListener { afspraakId ->  
-            binding.viewModel?.setSelectedAfspraak(afspraakId)
+            val dialog = AfspraakDetailsDialogFragment(afspraakId)
+            val fm = this.fragmentManager
+            dialog.show(fm!!, "")
         })
 
         afgelopenAdapter = AfspraakAdapter(AfspraakItemClickListener{afspraakId ->
-            binding.viewModel?.setSelectedAfspraak(afspraakId)
+            val dialog = AfspraakDetailsDialogFragment(afspraakId)
+            val fm = this.fragmentManager
+            dialog.show(fm!!, "")
         })
 
         binding.recyclerAfsprakenKomende.layoutManager = LinearLayoutManager(context)

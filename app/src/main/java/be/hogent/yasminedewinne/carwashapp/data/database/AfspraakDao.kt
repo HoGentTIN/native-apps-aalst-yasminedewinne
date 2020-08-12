@@ -23,4 +23,10 @@ interface AfspraakDao {
 
     @Query("SELECT * FROM afspraken WHERE carwashDatum < date('now') ORDER BY carwashDatum ASC")
     fun getAfgelopenAfspraken(): LiveData<List<Afspraak>>
+
+    @Query("SELECT * FROM afspraken WHERE id = :id")
+    fun getById(id: Int): Afspraak
+
+    @Query("DELETE FROM afspraken WHERE id = :id")
+    fun deleteAfspraak(id: Int): Int
 }
