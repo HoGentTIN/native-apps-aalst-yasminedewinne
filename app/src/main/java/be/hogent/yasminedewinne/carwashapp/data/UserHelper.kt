@@ -46,4 +46,11 @@ class UserHelper(context: Context) {
 
         dataHelper.applyChanges()
     }
+
+    fun signOut() {
+        dataHelper.remove(LocalDataHelper.Key.BOOL_ISFIRSTSETUP)
+        dataHelper.remove(LocalDataHelper.Key.STR_USERPICTURE)
+        dataHelper.remove(LocalDataHelper.Key.STR_USERTOKEN)
+        dataHelper.applyChanges()
+    }
 }

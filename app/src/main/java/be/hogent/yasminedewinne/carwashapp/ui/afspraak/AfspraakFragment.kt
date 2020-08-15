@@ -1,6 +1,7 @@
 package be.hogent.yasminedewinne.carwashapp.ui.afspraak
 
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,10 +10,12 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import be.hogent.yasminedewinne.carwashapp.App
 
 import be.hogent.yasminedewinne.carwashapp.R
 import be.hogent.yasminedewinne.carwashapp.databinding.AfspraakFragmentMainBinding
 import be.hogent.yasminedewinne.carwashapp.models.domain.Afspraak
+import be.hogent.yasminedewinne.carwashapp.ui.activity.StartupActivity
 import be.hogent.yasminedewinne.carwashapp.viewmodels.AfspraakViewModel
 import be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.AfspraakAdapter
 import be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.AfspraakItemClickListener
@@ -60,6 +63,12 @@ class AfspraakFragment : Fragment() {
 
         binding.recyclerAfsprakenHistoriek.layoutManager = LinearLayoutManager(context)
         binding.recyclerAfsprakenHistoriek.adapter = afgelopenAdapter
+
+        binding.btnAfmelden.setOnClickListener {
+            App.getUserHelper().signOut()
+            startActivity(Intent(requireContext(), StartupActivity::class.java))
+            activity!!.finish()
+        }
 
         registerListeners()
         startObservers()

@@ -79,6 +79,10 @@ class LocalDataHelper(dataName: String, context: Context) {
         return localData.getBoolean(key.name, false)
     }
 
+    fun remove(key: Key) {
+        dataEditor.remove(key.name)
+    }
+
     fun applyChanges() {
         dataEditor.apply()
     }

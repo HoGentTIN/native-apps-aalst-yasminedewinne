@@ -5,7 +5,7 @@
     <string name="home_nieuweCarwash_button">Nieuwe carwash</string>
     <string name="nav_home">Home</string>
     <string name="nav_zoek">Zoeken</string>
-    <string name="nav_afspraak">Afspraken</string>
+    <string name="nav_profile">Profiel</string>
 
     <string name="action_sign_in">Aanmelden</string>
     <string name="action_register">Registreren</string>
@@ -40,6 +40,7 @@
 
     <string name="title_aanmelden">Aanmelden…</string>
     <string name="title_registreren">Registreren…</string>
+    <string name="title_afmelden">Afmelden</string>
     <string name="title_afspraken">Overzicht afspraken</string>
     <string name="title_carwash_details">Details van de carwash:</string>
     <string name="title_auto">Auto:</string>
