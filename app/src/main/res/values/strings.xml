@@ -42,6 +42,7 @@
     <string name="title_registreren">Registreren…</string>
     <string name="title_afmelden">Afmelden</string>
     <string name="title_afspraken">Overzicht afspraken</string>
+    <string name="title_alle_carwashes">Alle carwashes</string>
     <string name="title_carwash_details">Details van de carwash:</string>
     <string name="title_auto">Auto:</string>
     <string name="title_locatie">Locatie:</string>
@@ -60,6 +61,7 @@
 
     <string name="header_afspraken_komende">Komende afspraken</string>
     <string name="header_afspraken_historiek">Oude afspraken</string>
+    <string name="header_eigen_carwashes">Mijn carwashes</string>
 
     <!-- Loading -->
     <string name="title_error_loading">OEPS! Er ging iets mis</string>

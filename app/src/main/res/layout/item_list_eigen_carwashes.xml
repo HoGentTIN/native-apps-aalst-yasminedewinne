@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="carwash"
+            type="be.hogent.yasminedewinne.carwashapp.models.domain.Carwash" />
+        <variable
+            name="clickListener"
+            type="be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.CarwashItemClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> clickListener.onClick(carwash)}">
+
+        <TextView
+            android:id="@+id/txt_afspraakItem_auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@{String.format(@string/label_auto, carwash.autoMerk, carwash.autoNaam)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="BMW X1"/>
+
+        <TextView
+            android:id="@+id/txt_afspraakItem_tarief"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{String.format( @string/label_tarief, carwash.tarief)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="€ 12"/>
+
+        <TextView
+            android:id="@+id/txt_afspraakItem_datum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:date="@{carwash.datum}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_afspraakItem_auto"
+            tools:text="01/01/2020"/>
+
+        <TextView
+            android:id="@+id/txt_afspraakItem_beginTijd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:beginTime="@{carwash.beginTijd}"
+            app:layout_constraintStart_toEndOf="@id/txt_afspraakItem_datum"
+            app:layout_constraintTop_toTopOf="@id/txt_afspraakItem_datum"
+            tools:text="09:00" />
+
+        <TextView
+            android:id="@+id/txt_afspraakItem_eindTijd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:beginTime="@{carwash.eindTijd}"
+            app:layout_constraintStart_toEndOf="@id/txt_afspraakItem_beginTijd"
+            app:layout_constraintTop_toTopOf="@id/txt_afspraakItem_beginTijd"
+            tools:text="12:00" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

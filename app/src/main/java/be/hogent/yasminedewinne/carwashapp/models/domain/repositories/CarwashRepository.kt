@@ -12,7 +12,12 @@ import java.io.InterruptedIOException
 
 class CarwashRepository(private val carwashDao: CarwashDao) {
 
+    val userHelper = App.getUserHelper()
+    val user = userHelper.getSignedInUser()
+
+
     val carwashes = carwashDao.getCarwashes()
+    val eigenCarwashes = carwashDao.getEigenCarwashes(user?.id!!)
 
     suspend fun getById(id: Int): Carwash {
         return withContext(Dispatchers.IO) {

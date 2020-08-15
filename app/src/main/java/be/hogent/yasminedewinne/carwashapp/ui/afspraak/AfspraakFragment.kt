@@ -15,10 +15,10 @@ import be.hogent.yasminedewinne.carwashapp.App
 import be.hogent.yasminedewinne.carwashapp.R
 import be.hogent.yasminedewinne.carwashapp.databinding.AfspraakFragmentMainBinding
 import be.hogent.yasminedewinne.carwashapp.models.domain.Afspraak
+import be.hogent.yasminedewinne.carwashapp.models.domain.Carwash
 import be.hogent.yasminedewinne.carwashapp.ui.activity.StartupActivity
 import be.hogent.yasminedewinne.carwashapp.viewmodels.AfspraakViewModel
-import be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.AfspraakAdapter
-import be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.AfspraakItemClickListener
+import be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.*
 
 /**
  * A simple [Fragment] subclass.
@@ -28,6 +28,7 @@ class AfspraakFragment : Fragment() {
     private lateinit var binding: AfspraakFragmentMainBinding
     lateinit var komendeAdapter: AfspraakAdapter
     lateinit var afgelopenAdapter: AfspraakAdapter
+    lateinit var eigenCarwashesAdapter: EigenCarwashesAdapter
 
     private val viewModel: AfspraakViewModel by lazy {
         val activity = requireNotNull(this.activity){
@@ -58,11 +59,18 @@ class AfspraakFragment : Fragment() {
             dialog.show(fm!!, "")
         })
 
+        eigenCarwashesAdapter = EigenCarwashesAdapter(CarwashItemClickListener { carwashId ->
+
+        })
+
         binding.recyclerAfsprakenKomende.layoutManager = LinearLayoutManager(context)
         binding.recyclerAfsprakenKomende.adapter = komendeAdapter
 
         binding.recyclerAfsprakenHistoriek.layoutManager = LinearLayoutManager(context)
         binding.recyclerAfsprakenHistoriek.adapter = afgelopenAdapter
+
+        binding.recyclerEigenCarwashes.layoutManager = LinearLayoutManager(context)
+        binding.recyclerEigenCarwashes.adapter = eigenCarwashesAdapter
 
         binding.btnAfmelden.setOnClickListener {
             App.getUserHelper().signOut()
@@ -83,6 +91,10 @@ class AfspraakFragment : Fragment() {
     }
 
     private fun startObservers(){
+        binding.viewModel?.eigenCarwashes?.observe(this, Observer { eigenCarwashes: List<Carwash> ->
+            eigenCarwashesAdapter.setList(eigenCarwashes)
+        })
+
         binding.viewModel?.komendeAfspraken?.observe(this, Observer{ komende: List<Afspraak> ->
             komendeAdapter.setList(komende)
         })

@@ -39,11 +39,12 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View? {
         binding = HomeFragmentMainBinding.inflate(inflater)
+        activity?.title = resources.getString(R.string.title_alle_carwashes)
+
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
         carwashAdapter = CarwashAdapter(CarwashItemClickListener { carwashId ->
-            //binding.viewModel?.setSelectedCarwash(carwashId)
             val dialog = CarwashDetailsDialogFragment(carwashId)
             val fm = this.fragmentManager
             dialog.show(fm!!, "")

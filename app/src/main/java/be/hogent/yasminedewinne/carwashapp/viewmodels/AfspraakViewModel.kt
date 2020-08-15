@@ -4,15 +4,18 @@ import android.app.Application
 import androidx.lifecycle.*
 import be.hogent.yasminedewinne.carwashapp.data.database.getDatabase
 import be.hogent.yasminedewinne.carwashapp.models.domain.repositories.AfspraakRepository
+import be.hogent.yasminedewinne.carwashapp.models.domain.repositories.CarwashRepository
 import kotlinx.coroutines.launch
 
 class AfspraakViewModel(application: Application): AndroidViewModel(application) {
 
     private val database = getDatabase(application)
     private val afspraakRepository = AfspraakRepository(database.afspraakDao)
+    private val carwashRepository = CarwashRepository(database.carwashDao)
 
     val komendeAfspraken = afspraakRepository.komendeAfspraken
     val afgelopenAfspraken = afspraakRepository.afgelopenAfspraken
+    val eigenCarwashes = carwashRepository.eigenCarwashes
 
     private val _isLoading = MutableLiveData<Boolean>(null)
     val isLoading: LiveData<Boolean>
