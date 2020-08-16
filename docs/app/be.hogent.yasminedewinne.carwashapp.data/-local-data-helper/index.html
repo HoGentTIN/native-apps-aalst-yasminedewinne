@@ -1,0 +1,120 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LocalDataHelper - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">be.hogent.yasminedewinne.carwashapp.data</a>&nbsp;/&nbsp;<a href="./index.html">LocalDataHelper</a><br/>
+<br/>
+<h1>LocalDataHelper</h1>
+<code><span class="keyword">class </span><span class="identifier">LocalDataHelper</span></code>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-key/index.html">Key</a></h4>
+</td>
+<td>
+<code><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">Key</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">LocalDataHelper</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$<init>(kotlin.String, android.content.Context)/dataName">dataName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$<init>(kotlin.String, android.content.Context)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="local-data.html">localData</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">localData</span><span class="symbol">: </span><a href="https://developer.android.com/reference/android/content/SharedPreferences.html"><span class="identifier">SharedPreferences</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="apply-changes.html">applyChanges</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">applyChanges</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-boolean.html">getBoolean</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getBoolean</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$getBoolean(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.Boolean)/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">, </span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$getBoolean(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.Boolean)/defaultValue">defaultValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">getBoolean</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$getBoolean(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key)/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-float.html">getFloat</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getFloat</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$getFloat(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key)/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">getFloat</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$getFloat(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.Float)/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">, </span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$getFloat(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.Float)/defaultValue">defaultValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-int.html">getInt</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getInt</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$getInt(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key)/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">getInt</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$getInt(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.Int)/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">, </span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$getInt(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.Int)/defaultValue">defaultValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-long.html">getLong</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getLong</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$getLong(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key)/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">getLong</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$getLong(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.Long)/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">, </span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$getLong(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.Long)/defaultValue">defaultValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-string.html">getString</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getString</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$getString(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.String)/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">, </span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$getString(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.String)/defaultValue">defaultValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">getString</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$getString(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key)/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="put.html">put</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$put(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.String)/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">, </span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$put(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.String)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$put(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.Boolean)/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">, </span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$put(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.Boolean)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$put(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.Int)/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">, </span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$put(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.Int)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$put(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.Float)/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">, </span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$put(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.Float)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html"><span class="identifier">Float</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$put(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.Long)/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">, </span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$put(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.Long)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">put</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$put(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.collections.Set((kotlin.String)))/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">, </span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$put(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key, kotlin.collections.Set((kotlin.String)))/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html"><span class="identifier">Set</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="remove.html">remove</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">remove</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper$remove(be.hogent.yasminedewinne.carwashapp.data.LocalDataHelper.Key)/key">key</span><span class="symbol">:</span>&nbsp;<span class="identifier">Key</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

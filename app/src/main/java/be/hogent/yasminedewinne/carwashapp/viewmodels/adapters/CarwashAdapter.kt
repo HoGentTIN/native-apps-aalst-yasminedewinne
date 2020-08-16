@@ -21,7 +21,7 @@ class CarwashAdapter(private val clickListener: CarwashItemClickListener) :
 
     fun setList(list: List<Carwash>?) {
         adapterScope.launch {
-            val items = list?.map {DataItem.CarwashItem(it) }
+            val items = list?.map { DataItem.CarwashItem(it) }
 
             withContext(Dispatchers.Main) {
                 submitList(items)

@@ -42,9 +42,9 @@ android {
         jvmTarget = "1.8"
     }
 
-    kapt {
+    /*kapt {
         generateStubs = true
-    }
+    }*/
 
     dokka {
         outputFormat = 'html'

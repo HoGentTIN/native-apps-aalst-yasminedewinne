@@ -1,7 +1,5 @@
 package be.hogent.yasminedewinne.carwashapp.ui.home
 
-
-import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,8 +9,6 @@ import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
-
-import be.hogent.yasminedewinne.carwashapp.R
 import be.hogent.yasminedewinne.carwashapp.databinding.FragmentCarwashDetailsDialogBinding
 import be.hogent.yasminedewinne.carwashapp.viewmodels.CarwashDetailsDialogViewModel
 import kotlinx.android.synthetic.main.fragment_carwash_details_dialog.*
@@ -35,7 +31,8 @@ class CarwashDetailsDialogFragment(carwashId: Int) : DialogFragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentCarwashDetailsDialogBinding.inflate(inflater)
@@ -60,5 +57,4 @@ class CarwashDetailsDialogFragment(carwashId: Int) : DialogFragment() {
         val dialog = super.onCreateDialog(savedInstanceState)
         return dialog
     }
-
 }

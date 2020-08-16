@@ -4,14 +4,13 @@ import android.app.Application
 import androidx.lifecycle.*
 import be.hogent.yasminedewinne.carwashapp.data.database.getDatabase
 import be.hogent.yasminedewinne.carwashapp.models.DTO.CarwashDTO
-import be.hogent.yasminedewinne.carwashapp.models.domain.Auto
 import be.hogent.yasminedewinne.carwashapp.models.domain.repositories.AutoRepository
 import be.hogent.yasminedewinne.carwashapp.models.domain.repositories.CarwashRepository
-import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.LocalTime
+import kotlinx.coroutines.launch
 
-class CarwashViewModel (application: Application): AndroidViewModel(application) {
+class CarwashViewModel(application: Application) : AndroidViewModel(application) {
 
     private val database = getDatabase(application)
     private val carwashRepository = CarwashRepository(database.carwashDao)
@@ -26,15 +25,15 @@ class CarwashViewModel (application: Application): AndroidViewModel(application)
     var beginUur = MutableLiveData<LocalTime>()
     var eindUur = MutableLiveData<LocalTime>()
 
-    fun carwashAfwerken(){
+    fun carwashAfwerken() {
         viewModelScope.launch {
             val carwash = CarwashDTO(
                 tarief = tarief.value!!,
                 takenlijst = uitleg.value!!,
                 datum = datum.value!!,
-                beginTijd =  beginUur.value!!,
+                beginTijd = beginUur.value!!,
                 eindTijd = eindUur.value!!,
-                gebruikerId = 0, //wordt in de repository ingesteld
+                gebruikerId = 0, // wordt in de repository ingesteld
                 autoId = autoId.value!!
             )
             carwashRepository.postCarwash(carwash)

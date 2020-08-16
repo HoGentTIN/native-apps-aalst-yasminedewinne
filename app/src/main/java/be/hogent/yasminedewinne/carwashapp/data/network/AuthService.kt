@@ -15,9 +15,9 @@ interface AuthApiService {
     @POST("auth/register")
     fun registerUser(@Body dto: RegisterDTO): Deferred<UserDTO>
 
-    //TODO Implementeer andere Auth methoden
+    // TODO Implementeer andere Auth methoden
 }
 
 object AuthService {
-    val HTTP : AuthApiService by lazy { BaseService.RETROFIT.create(AuthApiService::class.java) }
+    val HTTP: AuthApiService by lazy { BaseService.RETROFIT.create(AuthApiService::class.java) }
 }

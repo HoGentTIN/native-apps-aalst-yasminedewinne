@@ -2,8 +2,8 @@ package be.hogent.yasminedewinne.carwashapp.ui.activity
 
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import be.hogent.yasminedewinne.carwashapp.data.UserHelper
 import be.hogent.yasminedewinne.carwashapp.ui.dialog.SetupNoInternetPopupFragment
 
@@ -39,8 +39,7 @@ class StartupActivity : AppCompatActivity() {
 
         if (requestCode == LOGININ_USER && resultCode == Activity.RESULT_OK) {
             runStartup()
-        }
-        else if (requestCode == LOAD_USER_DETAILS) {
+        } else if (requestCode == LOAD_USER_DETAILS) {
             if (resultCode == Activity.RESULT_OK)
                 startApp()
             else {

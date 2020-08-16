@@ -9,7 +9,7 @@ import be.hogent.yasminedewinne.carwashapp.models.domain.repositories.AfspraakRe
 import be.hogent.yasminedewinne.carwashapp.models.domain.repositories.CarwashRepository
 import kotlinx.coroutines.launch
 
-class CarwashDetailsDialogViewModel(application:Application, carwashId: Int) : AndroidViewModel(application) {
+class CarwashDetailsDialogViewModel(application: Application, carwashId: Int) : AndroidViewModel(application) {
 
     private val database = getDatabase(application)
     private val carwashRepository = CarwashRepository(database.carwashDao)
@@ -26,7 +26,7 @@ class CarwashDetailsDialogViewModel(application:Application, carwashId: Int) : A
         }
     }
 
-    fun afspraakAfwerken(){
+    fun afspraakAfwerken() {
         viewModelScope.launch {
             val afspraak = AfspraakDTO(
                 carwashId = carwash.value?.id!!,
@@ -35,7 +35,6 @@ class CarwashDetailsDialogViewModel(application:Application, carwashId: Int) : A
             afspraakRepository.postAfspraak(afspraak)
         }
     }
-
 
     class Factory(private val application: Application, private val carwashId: Int) : ViewModelProvider.Factory {
 

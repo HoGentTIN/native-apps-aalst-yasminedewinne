@@ -1,0 +1,96 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AfspraakAdapter - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">be.hogent.yasminedewinne.carwashapp.viewmodels.adapters</a>&nbsp;/&nbsp;<a href="./index.html">AfspraakAdapter</a><br/>
+<br/>
+<h1>AfspraakAdapter</h1>
+<code><span class="keyword">class </span><span class="identifier">AfspraakAdapter</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ListAdapter</span><span class="symbol">&lt;</span><span class="identifier">DataItem</span><span class="symbol">,</span>&nbsp;<span class="identifier">ViewHolder</span><span class="symbol">&gt;</span></code>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-afspraak-diff-callback/index.html">AfspraakDiffCallback</a></h4>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">AfspraakDiffCallback</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ItemCallback</span><span class="symbol">&lt;</span><span class="identifier">DataItem</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-data-item/index.html">DataItem</a></h4>
+</td>
+<td>
+<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">DataItem</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="-view-holder/index.html">ViewHolder</a></h4>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ViewHolder</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ViewHolder</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">AfspraakAdapter</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.AfspraakAdapter$<init>(be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.AfspraakItemClickListener)/clickListener">clickListener</span><span class="symbol">:</span>&nbsp;<a href="../-afspraak-item-click-listener/index.html"><span class="identifier">AfspraakItemClickListener</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="click-listener.html">clickListener</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">clickListener</span><span class="symbol">: </span><a href="../-afspraak-item-click-listener/index.html"><span class="identifier">AfspraakItemClickListener</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="get-item-view-type.html">getItemViewType</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getItemViewType</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.AfspraakAdapter$getItemViewType(kotlin.Int)/position">position</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="on-bind-view-holder.html">onBindViewHolder</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">onBindViewHolder</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.AfspraakAdapter$onBindViewHolder(androidx.recyclerview.widget.RecyclerView.ViewHolder, kotlin.Int)/holder">holder</span><span class="symbol">:</span>&nbsp;<span class="identifier">ViewHolder</span><span class="symbol">, </span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.AfspraakAdapter$onBindViewHolder(androidx.recyclerview.widget.RecyclerView.ViewHolder, kotlin.Int)/position">position</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="on-create-view-holder.html">onCreateViewHolder</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">onCreateViewHolder</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.AfspraakAdapter$onCreateViewHolder(android.view.ViewGroup, kotlin.Int)/parent">parent</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/ViewGroup.html"><span class="identifier">ViewGroup</span></a><span class="symbol">, </span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.AfspraakAdapter$onCreateViewHolder(android.view.ViewGroup, kotlin.Int)/viewType">viewType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ViewHolder</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="set-list.html">setList</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">setList</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.AfspraakAdapter$setList(kotlin.collections.List((be.hogent.yasminedewinne.carwashapp.models.domain.Afspraak)))/list">list</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../be.hogent.yasminedewinne.carwashapp.models.domain/-afspraak/index.html"><span class="identifier">Afspraak</span></a><span class="symbol">&gt;</span><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

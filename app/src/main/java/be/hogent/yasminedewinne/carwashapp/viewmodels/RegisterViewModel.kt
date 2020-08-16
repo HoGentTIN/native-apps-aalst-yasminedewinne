@@ -1,19 +1,16 @@
 package be.hogent.yasminedewinne.carwashapp.viewmodels
 
 import android.app.Application
-import android.graphics.Bitmap
-import android.net.Uri
-import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.*
 import be.hogent.yasminedewinne.carwashapp.data.UserHelper
 import be.hogent.yasminedewinne.carwashapp.data.network.AuthService
 import be.hogent.yasminedewinne.carwashapp.models.DTO.RegisterDTO
 import be.hogent.yasminedewinne.carwashapp.models.domain.Adres
+import java.io.InterruptedIOException
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
-import java.io.InterruptedIOException
 
-class RegisterViewModel(application: Application) : AndroidViewModel(application)  {
+class RegisterViewModel(application: Application) : AndroidViewModel(application) {
     private val context = getApplication<Application>().applicationContext
     private val userHelper = UserHelper(context)
 
@@ -36,14 +33,11 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
                 val result = registerCall.await()
                 userHelper.saveUser(result.authToken)
                 _registerResponse.value = 200
-            }
-            catch (e: HttpException) {
+            } catch (e: HttpException) {
                 _registerResponse.value = e.code()
-            }
-            catch (e: InterruptedIOException) {
+            } catch (e: InterruptedIOException) {
                 _registerResponse.value = 504
-            }
-            catch (e: Exception) {
+            } catch (e: Exception) {
                 _registerResponse.value = 0
                 e.printStackTrace()
             }
@@ -74,7 +68,7 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
         }
     }*/
 
-    class Factory(private val application: Application): ViewModelProvider.Factory {
+    class Factory(private val application: Application) : ViewModelProvider.Factory {
 
         @Suppress("unchecked_cast")
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {

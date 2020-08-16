@@ -1,0 +1,77 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AfspraakRepository - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">be.hogent.yasminedewinne.carwashapp.models.domain.repositories</a>&nbsp;/&nbsp;<a href="./index.html">AfspraakRepository</a><br/>
+<br/>
+<h1>AfspraakRepository</h1>
+<code><span class="keyword">class </span><span class="identifier">AfspraakRepository</span></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">AfspraakRepository</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.models.domain.repositories.AfspraakRepository$<init>(be.hogent.yasminedewinne.carwashapp.data.database.AfspraakDao)/afspraakDao">afspraakDao</span><span class="symbol">:</span>&nbsp;<a href="../../be.hogent.yasminedewinne.carwashapp.data.database/-afspraak-dao/index.html"><span class="identifier">AfspraakDao</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="afgelopen-afspraken.html">afgelopenAfspraken</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">afgelopenAfspraken</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../be.hogent.yasminedewinne.carwashapp.models.domain/-afspraak/index.html"><span class="identifier">Afspraak</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="komende-afspraken.html">komendeAfspraken</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">komendeAfspraken</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../be.hogent.yasminedewinne.carwashapp.models.domain/-afspraak/index.html"><span class="identifier">Afspraak</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="delete-afspraak.html">deleteAfspraak</a></h4>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">deleteAfspraak</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.models.domain.repositories.AfspraakRepository$deleteAfspraak(kotlin.Int)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-by-id.html">getById</a></h4>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">getById</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.models.domain.repositories.AfspraakRepository$getById(kotlin.Int)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../be.hogent.yasminedewinne.carwashapp.models.domain/-afspraak/index.html"><span class="identifier">Afspraak</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="load-afspraken.html">loadAfspraken</a></h4>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">loadAfspraken</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="post-afspraak.html">postAfspraak</a></h4>
+</td>
+<td>
+<code><span class="keyword">suspend</span> <span class="keyword">fun </span><span class="identifier">postAfspraak</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.models.domain.repositories.AfspraakRepository$postAfspraak(be.hogent.yasminedewinne.carwashapp.models.DTO.AfspraakDTO)/afspraak">afspraak</span><span class="symbol">:</span>&nbsp;<a href="../../be.hogent.yasminedewinne.carwashapp.models.-d-t-o/-afspraak-d-t-o/index.html"><span class="identifier">AfspraakDTO</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

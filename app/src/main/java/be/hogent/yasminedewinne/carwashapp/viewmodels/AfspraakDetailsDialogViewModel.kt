@@ -23,7 +23,7 @@ class AfspraakDetailsDialogViewModel(application: Application, afspraakId: Int) 
         }
     }
 
-    fun afspraakVerwijderen(id: Int){
+    fun afspraakVerwijderen(id: Int) {
         viewModelScope.launch {
             afspraakRepository.deleteAfspraak(id)
         }

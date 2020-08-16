@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AfspraakDao - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">be.hogent.yasminedewinne.carwashapp.data.database</a>&nbsp;/&nbsp;<a href="./index.html">AfspraakDao</a><br/>
+<br/>
+<h1>AfspraakDao</h1>
+<code><span class="keyword">interface </span><span class="identifier">AfspraakDao</span></code>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="clear.html">clear</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">clear</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="delete-afspraak.html">deleteAfspraak</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">deleteAfspraak</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.database.AfspraakDao$deleteAfspraak(kotlin.Int)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-afgelopen-afspraken.html">getAfgelopenAfspraken</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAfgelopenAfspraken</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../be.hogent.yasminedewinne.carwashapp.models.domain/-afspraak/index.html"><span class="identifier">Afspraak</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-by-id.html">getById</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getById</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.database.AfspraakDao$getById(kotlin.Int)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../be.hogent.yasminedewinne.carwashapp.models.domain/-afspraak/index.html"><span class="identifier">Afspraak</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-komende-afspraken.html">getKomendeAfspraken</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getKomendeAfspraken</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../be.hogent.yasminedewinne.carwashapp.models.domain/-afspraak/index.html"><span class="identifier">Afspraak</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="insert.html">insert</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">insert</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.database.AfspraakDao$insert(be.hogent.yasminedewinne.carwashapp.models.domain.Afspraak)/afspraak">afspraak</span><span class="symbol">:</span>&nbsp;<a href="../../be.hogent.yasminedewinne.carwashapp.models.domain/-afspraak/index.html"><span class="identifier">Afspraak</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="insert-all.html">insertAll</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">insertAll</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.database.AfspraakDao$insertAll(kotlin.Array((be.hogent.yasminedewinne.carwashapp.models.domain.Afspraak)))/afspraken">afspraken</span><span class="symbol">:</span>&nbsp;<a href="../../be.hogent.yasminedewinne.carwashapp.models.domain/-afspraak/index.html"><span class="identifier">Afspraak</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

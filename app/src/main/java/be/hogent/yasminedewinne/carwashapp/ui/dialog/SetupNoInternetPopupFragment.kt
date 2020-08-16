@@ -7,7 +7,7 @@ import androidx.fragment.app.DialogFragment
 import be.hogent.yasminedewinne.carwashapp.R
 import kotlin.system.exitProcess
 
-class SetupNoInternetPopupFragment: DialogFragment() {
+class SetupNoInternetPopupFragment : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
             val builder = AlertDialog.Builder(it)

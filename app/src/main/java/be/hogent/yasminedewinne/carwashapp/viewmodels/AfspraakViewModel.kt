@@ -7,7 +7,7 @@ import be.hogent.yasminedewinne.carwashapp.models.domain.repositories.AfspraakRe
 import be.hogent.yasminedewinne.carwashapp.models.domain.repositories.CarwashRepository
 import kotlinx.coroutines.launch
 
-class AfspraakViewModel(application: Application): AndroidViewModel(application) {
+class AfspraakViewModel(application: Application) : AndroidViewModel(application) {
 
     private val database = getDatabase(application)
     private val afspraakRepository = AfspraakRepository(database.afspraakDao)
@@ -31,7 +31,7 @@ class AfspraakViewModel(application: Application): AndroidViewModel(application)
         }
     }
 
-    fun carwashVerwijderen(id: Int){
+    fun carwashVerwijderen(id: Int) {
         viewModelScope.launch {
             carwashRepository.deleteCarwash(id)
         }

@@ -5,7 +5,7 @@ import be.hogent.yasminedewinne.carwashapp.models.domain.Carwash
 import kotlinx.coroutines.Deferred
 import retrofit2.http.*
 
-interface CarwashApiService{
+interface CarwashApiService {
 
     @GET("carwashes")
     fun getAllCarwashes(): Deferred<List<CarwashDTO>>
@@ -21,5 +21,5 @@ interface CarwashApiService{
 }
 
 object CarwashService {
-    val HTTP : CarwashApiService by lazy { BaseService.RETROFIT.create(CarwashApiService::class.java) }
+    val HTTP: CarwashApiService by lazy { BaseService.RETROFIT.create(CarwashApiService::class.java) }
 }

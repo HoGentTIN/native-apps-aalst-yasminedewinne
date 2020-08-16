@@ -1,27 +1,26 @@
 package be.hogent.yasminedewinne.carwashapp.ui.afspraak
 
-
 import android.content.Intent
-import android.graphics.Canvas
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import be.hogent.yasminedewinne.carwashapp.App
-
 import be.hogent.yasminedewinne.carwashapp.R
 import be.hogent.yasminedewinne.carwashapp.databinding.AfspraakFragmentMainBinding
 import be.hogent.yasminedewinne.carwashapp.models.domain.Afspraak
 import be.hogent.yasminedewinne.carwashapp.models.domain.Carwash
 import be.hogent.yasminedewinne.carwashapp.ui.activity.StartupActivity
 import be.hogent.yasminedewinne.carwashapp.viewmodels.AfspraakViewModel
-import be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.*
+import be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.AfspraakAdapter
+import be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.AfspraakItemClickListener
+import be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.EigenCarwashesAdapter
 
 /**
  * A simple [Fragment] subclass.
@@ -34,7 +33,7 @@ class AfspraakFragment : Fragment() {
     lateinit var eigenCarwashesAdapter: EigenCarwashesAdapter
 
     private val viewModel: AfspraakViewModel by lazy {
-        val activity = requireNotNull(this.activity){
+        val activity = requireNotNull(this.activity) {
             "You can only access the viewModel after onActivityCreated()"
         }
 
@@ -50,13 +49,13 @@ class AfspraakFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-        komendeAdapter = AfspraakAdapter(AfspraakItemClickListener { afspraakId ->  
+        komendeAdapter = AfspraakAdapter(AfspraakItemClickListener { afspraakId ->
             val dialog = AfspraakDetailsDialogFragment(afspraakId)
             val fm = this.fragmentManager
             dialog.show(fm!!, "")
         })
 
-        afgelopenAdapter = AfspraakAdapter(AfspraakItemClickListener{afspraakId ->
+        afgelopenAdapter = AfspraakAdapter(AfspraakItemClickListener { afspraakId ->
             val dialog = AfspraakDetailsDialogFragment(afspraakId)
             val fm = this.fragmentManager
             dialog.show(fm!!, "")
@@ -93,12 +92,12 @@ class AfspraakFragment : Fragment() {
         }
     }
 
-    private fun startObservers(){
+    private fun startObservers() {
         binding.viewModel?.eigenCarwashes?.observe(this, Observer { eigenCarwashes: List<Carwash> ->
             eigenCarwashesAdapter.setList(eigenCarwashes)
         })
 
-        binding.viewModel?.komendeAfspraken?.observe(this, Observer{ komende: List<Afspraak> ->
+        binding.viewModel?.komendeAfspraken?.observe(this, Observer { komende: List<Afspraak> ->
             komendeAdapter.setList(komende)
         })
 
@@ -140,5 +139,4 @@ class AfspraakFragment : Fragment() {
             getDefaultUIUtil().onDraw(c, recyclerView, foregroundView, dX, dY, actionState, isCurrentlyActive)
         }*/
     }
-
 }

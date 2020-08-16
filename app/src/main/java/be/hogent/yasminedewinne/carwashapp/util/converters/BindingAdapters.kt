@@ -14,8 +14,8 @@ fun formatDate(view: TextView, date: LocalDate?) {
 }
 
 @BindingAdapter("app:beginTime")
-fun formatTime(view: TextView, time: LocalTime?){
-    if(time == null)
+fun formatTime(view: TextView, time: LocalTime?) {
+    if (time == null)
         return
 
     view.text = TimeFormatter.toString(time, "HH:mm")

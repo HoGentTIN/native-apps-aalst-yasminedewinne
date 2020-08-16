@@ -30,4 +30,3 @@ interface CarwashDao {
     @Query("DELETE FROM carwashes WHERE id = :id")
     fun deleteCarwash(id: Int): Int
 }
-

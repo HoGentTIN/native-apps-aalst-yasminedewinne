@@ -14,25 +14,25 @@ class AutoRepository(private val autoDao: AutoDao) {
 
     val autosPerUser = autoDao.getAutos(user?.id!!)
 
-    suspend fun loadAutos(): Boolean{
+    suspend fun loadAutos(): Boolean {
         val userHelper = App.getUserHelper()
         val user = userHelper.getSignedInUser()
 
-        if( user != null){
+        if (user != null) {
             val id = user.id
 
-            return withContext(Dispatchers.IO){
+            return withContext(Dispatchers.IO) {
                 val autosCall = AutoService.HTTP.getAutosForUser(id)
                 try {
                     val autos = autosCall.await()
                     autoDao.insertAll(*autos.map { x -> x.toModel() }.toTypedArray())
 
                     true
-                }catch (e: HttpException){
+                } catch (e: HttpException) {
                     e.printStackTrace()
 
                     false
-                }catch (e:Exception){
+                } catch (e: Exception) {
                     e.printStackTrace()
 
                     false

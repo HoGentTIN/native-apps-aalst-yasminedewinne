@@ -13,7 +13,7 @@ import java.time.LocalTime
     ]
 )
 @TypeConverters(value = [DateConverter::class, TimeConverter::class])
-data class Afspraak (
+data class Afspraak(
 
     @PrimaryKey(autoGenerate = false)
     var id: Int = 0,

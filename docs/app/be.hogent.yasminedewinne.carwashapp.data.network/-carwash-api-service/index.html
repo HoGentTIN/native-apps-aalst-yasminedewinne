@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CarwashApiService - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">be.hogent.yasminedewinne.carwashapp.data.network</a>&nbsp;/&nbsp;<a href="./index.html">CarwashApiService</a><br/>
+<br/>
+<h1>CarwashApiService</h1>
+<code><span class="keyword">interface </span><span class="identifier">CarwashApiService</span></code>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="delete-carwash.html">deleteCarwash</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">deleteCarwash</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.network.CarwashApiService$deleteCarwash(kotlin.Int)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Deferred</span><span class="symbol">&lt;</span><a href="../../be.hogent.yasminedewinne.carwashapp.models.domain/-carwash/index.html"><span class="identifier">Carwash</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-all-carwashes.html">getAllCarwashes</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAllCarwashes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Deferred</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../be.hogent.yasminedewinne.carwashapp.models.-d-t-o/-carwash-d-t-o/index.html"><span class="identifier">CarwashDTO</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="get-carwashes-by-stad.html">getCarwashesByStad</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCarwashesByStad</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.network.CarwashApiService$getCarwashesByStad(kotlin.String)/stad">stad</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Deferred</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../be.hogent.yasminedewinne.carwashapp.models.domain/-carwash/index.html"><span class="identifier">Carwash</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="post-carwash.html">postCarwash</a></h4>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">postCarwash</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.data.network.CarwashApiService$postCarwash(be.hogent.yasminedewinne.carwashapp.models.DTO.CarwashDTO)/carwash">carwash</span><span class="symbol">:</span>&nbsp;<a href="../../be.hogent.yasminedewinne.carwashapp.models.-d-t-o/-carwash-d-t-o/index.html"><span class="identifier">CarwashDTO</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Deferred</span><span class="symbol">&lt;</span><a href="../../be.hogent.yasminedewinne.carwashapp.models.-d-t-o/-carwash-d-t-o/index.html"><span class="identifier">CarwashDTO</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

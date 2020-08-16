@@ -6,7 +6,7 @@ import be.hogent.yasminedewinne.carwashapp.data.database.getDatabase
 import be.hogent.yasminedewinne.carwashapp.models.domain.repositories.CarwashRepository
 import kotlinx.coroutines.launch
 
-class HomeViewModel(application: Application): AndroidViewModel(application) {
+class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
     private val database = getDatabase(application)
     private val carwashRepository = CarwashRepository(database.carwashDao)
@@ -27,7 +27,6 @@ class HomeViewModel(application: Application): AndroidViewModel(application) {
     }
 
     fun setSelectedCarwash(carwashId: Int) {
-
     }
 
     class Factory(private val application: Application) : ViewModelProvider.Factory {

@@ -4,7 +4,7 @@ import be.hogent.yasminedewinne.carwashapp.models.domain.Adres
 import com.squareup.moshi.Json
 
 data class RegisterDTO(
-    //var afbeelding: String?,
+    // var afbeelding: String?,
 
     var voornaam: String,
 

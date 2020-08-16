@@ -1,7 +1,6 @@
 package be.hogent.yasminedewinne.carwashapp.models.DTO
 
 import be.hogent.yasminedewinne.carwashapp.models.domain.Afspraak
-import be.hogent.yasminedewinne.carwashapp.models.domain.Carwash
 import be.hogent.yasminedewinne.carwashapp.models.domain.User
 import java.time.LocalDate
 import java.time.LocalTime
@@ -15,16 +14,16 @@ data class AfspraakDTO(
     var carwashId: Int,
     var carwash: CarwashDTO? = null
 ) {
-    fun toModel(): Afspraak{
+    fun toModel(): Afspraak {
         return Afspraak(
             id = id,
             gebruikerId = gebruikerId,
             carwashId = carwash?.id ?: 0,
-            //carwashAdres = carwash?.gebruikerAdres ?: "",
+            // carwashAdres = carwash?.gebruikerAdres ?: "",
             carwashAdres = carwash?.gebruiker?.adres?.straatNaam ?: "",
-            //carwashMerk = carwash?.autoMerk ?: "",
+            // carwashMerk = carwash?.autoMerk ?: "",
             carwashMerk = carwash?.auto?.merk ?: "",
-            //carwashAuto = carwash?.autoNaam ?: "",
+            // carwashAuto = carwash?.autoNaam ?: "",
             carwashAuto = carwash?.auto?.naam ?: "",
             carwashTarief = carwash?.tarief ?: 0,
             carwashDatum = carwash?.datum ?: LocalDate.now(),

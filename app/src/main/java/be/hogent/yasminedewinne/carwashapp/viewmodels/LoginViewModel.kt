@@ -5,11 +5,11 @@ import androidx.lifecycle.*
 import be.hogent.yasminedewinne.carwashapp.data.UserHelper
 import be.hogent.yasminedewinne.carwashapp.data.network.AuthService
 import be.hogent.yasminedewinne.carwashapp.models.DTO.LoginDTO
+import java.io.InterruptedIOException
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
-import java.io.InterruptedIOException
 
-class LoginViewModel(application: Application): AndroidViewModel(application) {
+class LoginViewModel(application: Application) : AndroidViewModel(application) {
     private val context = getApplication<Application>().applicationContext
     private val userHelper = UserHelper(context)
 
@@ -24,14 +24,11 @@ class LoginViewModel(application: Application): AndroidViewModel(application) {
                 val result = loginCall.await()
                 userHelper.saveUser(result.authToken)
                 _loginResponse.value = 200
-            }
-            catch (e: HttpException) {
+            } catch (e: HttpException) {
                 _loginResponse.value = e.code()
-            }
-            catch (e: InterruptedIOException) {
+            } catch (e: InterruptedIOException) {
                 _loginResponse.value = 504
-            }
-            catch (e: Exception) {
+            } catch (e: Exception) {
                 _loginResponse.value = 400
                 e.printStackTrace()
             }
@@ -40,7 +37,7 @@ class LoginViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-    class Factory(private val application: Application): ViewModelProvider.Factory {
+    class Factory(private val application: Application) : ViewModelProvider.Factory {
 
         @Suppress("unchecked_cast")
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {

@@ -19,11 +19,11 @@ class AfspraakAdapter(val clickListener: AfspraakItemClickListener) :
 
     private val adapterScope = CoroutineScope(Dispatchers.Default)
 
-    fun setList(list: List<Afspraak>?){
+    fun setList(list: List<Afspraak>?) {
         adapterScope.launch {
             val items = list?.map { DataItem.AfspraakItem(it) }
 
-            withContext(Dispatchers.Main){
+            withContext(Dispatchers.Main) {
                 submitList(items)
             }
         }
@@ -88,7 +88,6 @@ class AfspraakAdapter(val clickListener: AfspraakItemClickListener) :
 
         abstract val id: Int
     }
-
 }
 
 class AfspraakItemClickListener(val clickListener: (afspraakId: Int) -> Unit) {

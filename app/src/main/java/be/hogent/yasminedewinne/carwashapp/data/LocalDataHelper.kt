@@ -38,7 +38,6 @@ class LocalDataHelper(dataName: String, context: Context) {
         dataEditor.putStringSet(key.name, value)
     }
 
-
     fun getString(key: Key, defaultValue: String?): String? {
         return localData.getString(key.name, defaultValue)
     }

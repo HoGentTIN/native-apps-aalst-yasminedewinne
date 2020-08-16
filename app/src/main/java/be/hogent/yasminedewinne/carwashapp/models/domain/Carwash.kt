@@ -6,7 +6,6 @@ import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
 import be.hogent.yasminedewinne.carwashapp.util.converters.DateConverter
 import be.hogent.yasminedewinne.carwashapp.util.converters.TimeConverter
-import com.squareup.moshi.Json
 import java.time.LocalDate
 import java.time.LocalTime
 

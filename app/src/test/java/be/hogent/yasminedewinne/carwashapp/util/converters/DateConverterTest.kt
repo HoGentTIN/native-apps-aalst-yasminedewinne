@@ -1,10 +1,10 @@
 package be.hogent.yasminedewinne.carwashapp.util.converters
 
-import org.junit.Assert
-import org.junit.Test
 import java.time.LocalDate
 import java.time.Month
 import java.time.format.DateTimeParseException
+import org.junit.Assert
+import org.junit.Test
 
 class DateConverterTest {
     private val dateConverter = DateConverter()

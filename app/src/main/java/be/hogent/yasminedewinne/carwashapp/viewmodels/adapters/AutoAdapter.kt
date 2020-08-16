@@ -35,7 +35,7 @@ class AutoAdapter(private val context: Context, private val mItems: List<Auto>) 
         return binding.txtDropdownCenter
     }
 
-    //drop down item view
+    // drop down item view
     override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup): View {
         val binding = ItemDropdownBinding.inflate(mInflater)
 

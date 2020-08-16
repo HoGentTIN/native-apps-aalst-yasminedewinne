@@ -1,15 +1,14 @@
 package be.hogent.yasminedewinne.carwashapp.ui.auth
 
-
 import android.app.Activity
 import android.app.ProgressDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import be.hogent.yasminedewinne.carwashapp.R
@@ -51,7 +50,7 @@ class LoginFragment : Fragment(), Validator.ValidationListener {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-        binding.btnLoginRegistreren.setOnClickListener { view:View->
+        binding.btnLoginRegistreren.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
         binding.btnLogin.setOnClickListener { validator.validate() }

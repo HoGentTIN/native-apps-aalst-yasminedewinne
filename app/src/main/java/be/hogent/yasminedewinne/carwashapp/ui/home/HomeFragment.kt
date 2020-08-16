@@ -1,19 +1,14 @@
 package be.hogent.yasminedewinne.carwashapp.ui.home
 
-
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import be.hogent.yasminedewinne.carwashapp.R
 import be.hogent.yasminedewinne.carwashapp.databinding.HomeFragmentMainBinding
 import be.hogent.yasminedewinne.carwashapp.models.domain.Carwash
@@ -37,7 +32,7 @@ class HomeFragment : Fragment() {
             .get(HomeViewModel::class.java)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = HomeFragmentMainBinding.inflate(inflater)
         activity?.title = resources.getString(R.string.title_alle_carwashes)
 
@@ -69,15 +64,15 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun startObservers(){
+    private fun startObservers() {
 
         binding.viewModel?.carwashes?.observe(this, Observer { carwashes: List<Carwash> ->
-            if(carwashes.isEmpty()){
+            if (carwashes.isEmpty()) {
                 Snackbar.make(view!!, "Er zijn geen nieuwe carwashes besschikbaar", Snackbar.LENGTH_LONG)
 
-                //Clear list
+                // Clear list
                 carwashAdapter.setList(arrayListOf())
-            }else{
+            } else {
                 carwashAdapter.setList(carwashes)
             }
         })

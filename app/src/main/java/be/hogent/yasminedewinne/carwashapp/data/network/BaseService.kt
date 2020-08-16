@@ -8,11 +8,6 @@ import be.hogent.yasminedewinne.carwashapp.util.converters.TimeAdapter
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
 import java.security.SecureRandom
 import java.security.cert.X509Certificate
 import java.util.concurrent.TimeUnit
@@ -20,21 +15,26 @@ import javax.net.ssl.HostnameVerifier
 import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 object BaseService {
 
     private val userHelper = App.getUserHelper()
 
-    private fun isProbablyAnEmulator() = Build.FINGERPRINT.startsWith("generic")
-            || Build.FINGERPRINT.startsWith("unknown")
-            || Build.MODEL.contains("google_sdk")
-            || Build.MODEL.contains("Emulator")
-            || Build.MODEL.contains("Android SDK built for x86")
-            || Build.BOARD == "QC_Reference_Phone" //bluestacks
-            || Build.MANUFACTURER.contains("Genymotion")
-            || Build.HOST.startsWith("Build") //MSI App Player
-            || (Build.BRAND.startsWith("generic") && Build.DEVICE.startsWith("generic"))
-            || "google_sdk" == Build.PRODUCT
+    private fun isProbablyAnEmulator() = Build.FINGERPRINT.startsWith("generic") ||
+            Build.FINGERPRINT.startsWith("unknown") ||
+            Build.MODEL.contains("google_sdk") ||
+            Build.MODEL.contains("Emulator") ||
+            Build.MODEL.contains("Android SDK built for x86") ||
+            Build.BOARD == "QC_Reference_Phone" || // bluestacks
+            Build.MANUFACTURER.contains("Genymotion") ||
+            Build.HOST.startsWith("Build") || // MSI App Player
+            (Build.BRAND.startsWith("generic") && Build.DEVICE.startsWith("generic")) ||
+            "google_sdk" == Build.PRODUCT
 
     private val BASE_URL: String
         get() {
@@ -65,7 +65,7 @@ object BaseService {
         .build()
 
     /** Maak een OkHttpClient op basis van debugging status */
-    private fun createHttpClient() : OkHttpClient {
+    private fun createHttpClient(): OkHttpClient {
         val okHttpClient = OkHttpClient.Builder()
         okHttpClient.callTimeout(5000, TimeUnit.MILLISECONDS)
 

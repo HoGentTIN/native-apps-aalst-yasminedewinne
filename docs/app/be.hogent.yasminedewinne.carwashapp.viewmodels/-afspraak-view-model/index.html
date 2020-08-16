@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AfspraakViewModel - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">be.hogent.yasminedewinne.carwashapp.viewmodels</a>&nbsp;/&nbsp;<a href="./index.html">AfspraakViewModel</a><br/>
+<br/>
+<h1>AfspraakViewModel</h1>
+<code><span class="keyword">class </span><span class="identifier">AfspraakViewModel</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AndroidViewModel</span></code>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-factory/index.html">Factory</a></h4>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Factory</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Factory</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">AfspraakViewModel</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.viewmodels.AfspraakViewModel$<init>(android.app.Application)/application">application</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/app/Application.html"><span class="identifier">Application</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="afgelopen-afspraken.html">afgelopenAfspraken</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">afgelopenAfspraken</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../be.hogent.yasminedewinne.carwashapp.models.domain/-afspraak/index.html"><span class="identifier">Afspraak</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="eigen-carwashes.html">eigenCarwashes</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">eigenCarwashes</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../be.hogent.yasminedewinne.carwashapp.models.domain/-carwash/index.html"><span class="identifier">Carwash</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="is-loading.html">isLoading</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">isLoading</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="komende-afspraken.html">komendeAfspraken</a></h4>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">komendeAfspraken</span><span class="symbol">: </span><span class="identifier">LiveData</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../be.hogent.yasminedewinne.carwashapp.models.domain/-afspraak/index.html"><span class="identifier">Afspraak</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="carwash-verwijderen.html">carwashVerwijderen</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">carwashVerwijderen</span><span class="symbol">(</span><span class="identifier" id="be.hogent.yasminedewinne.carwashapp.viewmodels.AfspraakViewModel$carwashVerwijderen(kotlin.Int)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="refresh-data.html">refreshData</a></h4>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">refreshData</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

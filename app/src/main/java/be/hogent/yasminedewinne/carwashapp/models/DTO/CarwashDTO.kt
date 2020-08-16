@@ -19,7 +19,7 @@ data class CarwashDTO(
     var beginTijd: LocalTime,
     var eindTijd: LocalTime
 ) {
-    fun toModel(): Carwash{
+    fun toModel(): Carwash {
         return Carwash(
             id = id,
             tarief = tarief,

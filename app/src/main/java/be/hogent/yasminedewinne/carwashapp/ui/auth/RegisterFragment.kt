@@ -1,18 +1,15 @@
 package be.hogent.yasminedewinne.carwashapp.ui.auth
 
-
 import android.app.Activity
 import android.app.ProgressDialog
-import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-
 import be.hogent.yasminedewinne.carwashapp.R
 import be.hogent.yasminedewinne.carwashapp.databinding.AccountFragmentRegisterBinding
 import be.hogent.yasminedewinne.carwashapp.models.domain.Adres
@@ -52,9 +49,9 @@ class RegisterFragment : Fragment(), Validator.ValidationListener {
 
     @NotEmpty(messageResId = R.string.error_empty)
     @Pattern(regex =
-    "(\\+[0-9]+[\\- \\.]*)?"
-            + "(\\([0-9]+\\)[\\- \\.]*)?"
-            + "([0-9][0-9\\- \\.]+[0-9])", messageResId = R.string.error_invalid_telnr)
+    "(\\+[0-9]+[\\- \\.]*)?" +
+            "(\\([0-9]+\\)[\\- \\.]*)?" +
+            "([0-9][0-9\\- \\.]+[0-9])", messageResId = R.string.error_invalid_telnr)
     private lateinit var txtTelNr: EditText
 
     @NotEmpty(messageResId = R.string.error_empty)
@@ -141,7 +138,7 @@ class RegisterFragment : Fragment(), Validator.ValidationListener {
     }
 
     private fun registerListeners() {
-        //binding.imgRegisterProfile.setOnClickListener { pickUserPicture() }
+        // binding.imgRegisterProfile.setOnClickListener { pickUserPicture() }
         binding.btnRegistreren.setOnClickListener { this.validator.validate() }
         /*binding.btnRegistrerenClearPicture.setOnClickListener {
             binding.imgRegisterProfile.setImageResource(R.drawable.profile)
