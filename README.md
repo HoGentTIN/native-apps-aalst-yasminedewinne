@@ -2,15 +2,6 @@
 Native Apps I - Android
 
 ## Running code
-* Stap 1: Klik met de rechtermuisknop op "CarwashAPI.API" project en selecteer "Manage User Secrets"
-* Stap 2: Plak het volgende json snippit
-
-```json
-{
-  "Tokens": {
-    "Key": " AndroidIsBetterThanWindowsAndIOS"
-  }
-}
-```
-
-* Stap 3: Run de API, daarna de app
+Stap 1: Clone het project in een lokale map 
+Stap 2: Open het project in Android Studio en run de code
+Stap 3: Aanmelden kan met email "yasminedw@icloud.com" en wachtwoord "UserWachtwoord"
