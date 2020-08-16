@@ -12,28 +12,30 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-private const val ITEM_VIEW_TYPE_ITEM = 1
+class EigenCarwashesAdapter(clickListener: (Int) -> Unit) : ListAdapter<Carwash, RecyclerView.ViewHolder>(TaskDiffCallback()) {
 
-class EigenCarwashesAdapter(private val clickListener: CarwashItemClickListener) :
-    ListAdapter<EigenCarwashesAdapter.DataItem, RecyclerView.ViewHolder>(CarwashDiffCallback()) {
+    companion object {
+        private const val ITEM_VIEW_TYPE_ITEM = 1
+    }
 
+    private val clickListener = ClickListener(clickListener)
     private val adapterScope = CoroutineScope(Dispatchers.Default)
 
     fun setList(list: List<Carwash>?) {
         adapterScope.launch {
-            val items = list?.map {DataItem.CarwashItem(it) }
-
             withContext(Dispatchers.Main) {
-                submitList(items)
+                submitList(list)
             }
         }
     }
 
+    fun getItemAt(position: Int) = getItem(position)
+
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
             is ViewHolder -> {
-                val carwashItem = getItem(position) as DataItem.CarwashItem
-                holder.bind(clickListener, carwashItem.carwash)
+                val item = getItem(position)
+                holder.bind(clickListener, item)
             }
         }
     }
@@ -46,14 +48,14 @@ class EigenCarwashesAdapter(private val clickListener: CarwashItemClickListener)
     }
 
     override fun getItemViewType(position: Int): Int {
-        return when (getItem(position)) {
-            is DataItem.CarwashItem -> ITEM_VIEW_TYPE_ITEM
-        }
+        return ITEM_VIEW_TYPE_ITEM
     }
 
     class ViewHolder private constructor(private val binding: ItemListEigenCarwashesBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(clickListener: CarwashItemClickListener, item: Carwash) {
+        val viewForeground = binding.viewForeGround!!
+
+        fun bind(clickListener: ClickListener, item: Carwash) {
             binding.carwash = item
             binding.clickListener = clickListener
 
@@ -70,22 +72,18 @@ class EigenCarwashesAdapter(private val clickListener: CarwashItemClickListener)
         }
     }
 
-    class CarwashDiffCallback : DiffUtil.ItemCallback<DataItem>() {
+    class ClickListener(val clickListener: (Int) -> Unit) {
+        fun onClick(item: Carwash) = clickListener(item.id)
+    }
 
-        override fun areItemsTheSame(oldItem: DataItem, newItem: DataItem): Boolean {
+    private class TaskDiffCallback : DiffUtil.ItemCallback<Carwash>() {
+
+        override fun areItemsTheSame(oldItem: Carwash, newItem: Carwash): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: DataItem, newItem: DataItem): Boolean {
+        override fun areContentsTheSame(oldItem: Carwash, newItem: Carwash): Boolean {
             return oldItem == newItem
         }
-    }
-
-    sealed class DataItem {
-        data class CarwashItem(val carwash: Carwash) : DataItem() {
-            override val id = carwash.id
-        }
-
-        abstract val id: Int
     }
 }

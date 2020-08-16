@@ -25,8 +25,15 @@ class AfspraakViewModel(application: Application): AndroidViewModel(application)
         viewModelScope.launch {
             _isLoading.value = true
             afspraakRepository.loadAfspraken()
+            carwashRepository.loadCarwashes()
             _isLoading.value = false
             _isLoading.value = null
+        }
+    }
+
+    fun carwashVerwijderen(id: Int){
+        viewModelScope.launch {
+            carwashRepository.deleteCarwash(id)
         }
     }
 

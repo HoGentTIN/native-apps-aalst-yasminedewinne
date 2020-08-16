@@ -9,10 +9,11 @@
             type="be.hogent.yasminedewinne.carwashapp.models.domain.Carwash" />
         <variable
             name="clickListener"
-            type="be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.CarwashItemClickListener" />
+            type="be.hogent.yasminedewinne.carwashapp.viewmodels.adapters.EigenCarwashesAdapter.ClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/viewForeGround"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="@{() -> clickListener.onClick(carwash)}">
@@ -26,7 +27,7 @@
             android:text="@{String.format(@string/label_auto, carwash.autoMerk, carwash.autoNaam)}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="BMW X1"/>
+            tools:text="BMW X1" />
 
         <TextView
             android:id="@+id/txt_afspraakItem_tarief"
@@ -37,7 +38,7 @@
             android:text="@{String.format( @string/label_tarief, carwash.tarief)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="€ 12"/>
+            tools:text="€ 12" />
 
         <TextView
             android:id="@+id/txt_afspraakItem_datum"
@@ -48,7 +49,7 @@
             app:date="@{carwash.datum}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txt_afspraakItem_auto"
-            tools:text="01/01/2020"/>
+            tools:text="01/01/2020" />
 
         <TextView
             android:id="@+id/txt_afspraakItem_beginTijd"

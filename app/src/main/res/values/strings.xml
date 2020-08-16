@@ -65,7 +65,7 @@
 
     <!-- Loading -->
     <string name="title_error_loading">OEPS! Er ging iets mis</string>
-    <string name="loading_motd">Alles word klaar gezet voor gebruik</string>
+    <string name="loading_motd">Alles wordt klaar gezet voor gebruik</string>
     <string name="action_error_loading">App Sluiten</string>
     <string name="error_loading_nonetwork">
         Het lukte niet om de gegevens van de server te halen.\n

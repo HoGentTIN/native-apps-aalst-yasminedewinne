@@ -2,6 +2,7 @@ package be.hogent.yasminedewinne.carwashapp.ui.afspraak
 
 
 import android.content.Intent
+import android.graphics.Canvas
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,7 +10,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import be.hogent.yasminedewinne.carwashapp.App
 
 import be.hogent.yasminedewinne.carwashapp.R
@@ -59,9 +62,8 @@ class AfspraakFragment : Fragment() {
             dialog.show(fm!!, "")
         })
 
-        eigenCarwashesAdapter = EigenCarwashesAdapter(CarwashItemClickListener { carwashId ->
-
-        })
+        eigenCarwashesAdapter = EigenCarwashesAdapter { carwashId ->
+        }
 
         binding.recyclerAfsprakenKomende.layoutManager = LinearLayoutManager(context)
         binding.recyclerAfsprakenKomende.adapter = komendeAdapter
@@ -71,6 +73,7 @@ class AfspraakFragment : Fragment() {
 
         binding.recyclerEigenCarwashes.layoutManager = LinearLayoutManager(context)
         binding.recyclerEigenCarwashes.adapter = eigenCarwashesAdapter
+        ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(binding.recyclerEigenCarwashes)
 
         binding.btnAfmelden.setOnClickListener {
             App.getUserHelper().signOut()
@@ -109,5 +112,35 @@ class AfspraakFragment : Fragment() {
         })
     }
 
+    private val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+        override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean = false
+
+        override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+            val carwash = eigenCarwashesAdapter.getItemAt(viewHolder.adapterPosition)
+            binding.viewModel?.carwashVerwijderen(carwash.id)
+
+            // Reset swipe
+            eigenCarwashesAdapter.notifyItemChanged(viewHolder.adapterPosition)
+        }
+
+        override fun isItemViewSwipeEnabled(): Boolean {
+            return true
+        }
+
+        override fun clearView(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder) {
+            val foregroundView = (viewHolder as EigenCarwashesAdapter.ViewHolder).viewForeground
+            getDefaultUIUtil().clearView(foregroundView)
+        }
+
+        override fun onChildDrawOver(c: Canvas, recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder?, dX: Float, dY: Float, actionState: Int, isCurrentlyActive: Boolean) {
+            val foregroundView = (viewHolder as EigenCarwashesAdapter.ViewHolder).viewForeground
+            getDefaultUIUtil().onDrawOver(c, recyclerView, foregroundView, dX, dY, actionState, isCurrentlyActive)
+        }
+
+        override fun onChildDraw(c: Canvas, recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, dX: Float, dY: Float, actionState: Int, isCurrentlyActive: Boolean) {
+            val foregroundView = (viewHolder as EigenCarwashesAdapter.ViewHolder).viewForeground
+            getDefaultUIUtil().onDraw(c, recyclerView, foregroundView, dX, dY, actionState, isCurrentlyActive)
+        }
+    }
 
 }

@@ -9,7 +9,10 @@ import retrofit2.HttpException
 
 class AutoRepository(private val autoDao: AutoDao) {
 
-    val autosPerUser = autoDao.getAutos()
+    val userHelper = App.getUserHelper()
+    val user = userHelper.getSignedInUser()
+
+    val autosPerUser = autoDao.getAutos(user?.id!!)
 
     suspend fun loadAutos(): Boolean{
         val userHelper = App.getUserHelper()
@@ -19,7 +22,7 @@ class AutoRepository(private val autoDao: AutoDao) {
             val id = user.id
 
             return withContext(Dispatchers.IO){
-                val autosCall = AutoService.HTTP.getAutosForUser((id))
+                val autosCall = AutoService.HTTP.getAutosForUser(id)
                 try {
                     val autos = autosCall.await()
                     autoDao.insertAll(*autos.map { x -> x.toModel() }.toTypedArray())

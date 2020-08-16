@@ -94,9 +94,10 @@
             android:id="@+id/btn_carwash_beginTijd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:text="@string/hint_beginTijd"
+            app:layout_constraintEnd_toStartOf="@+id/btn_carwash_eindTijd"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_carwash_datum" />
 
@@ -104,10 +105,10 @@
             android:id="@+id/btn_carwash_eindTijd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
             android:text="@string/hint_eindTijd"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btn_carwash_beginTijd"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_carwash_beginTijd"
             app:layout_constraintTop_toTopOf="@id/btn_carwash_beginTijd" />
 
         <Button

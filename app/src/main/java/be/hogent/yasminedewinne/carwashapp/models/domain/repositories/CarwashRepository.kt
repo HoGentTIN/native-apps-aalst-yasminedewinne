@@ -60,6 +60,33 @@ class CarwashRepository(private val carwashDao: CarwashDao) {
         return -1
     }
 
+    suspend fun deleteCarwash(id: Int): Int{
+        return withContext(Dispatchers.IO){
+            val call = CarwashService.HTTP.deleteCarwash(id)
+
+            val response = try{
+                val result = call.await()
+                carwashDao.deleteCarwash(result.id)
+
+                200
+            }catch (e: HttpException){
+                e.printStackTrace()
+
+                e.code()
+            }catch (e: InterruptedIOException){
+                e.printStackTrace()
+
+                503
+            }catch (e: Exception){
+                e.printStackTrace()
+
+                -1
+            }
+            response
+        }
+        return -1
+    }
+
     suspend fun loadCarwashes(): Boolean{
         return withContext(Dispatchers.IO){
             val carwashCall = CarwashService.HTTP.getAllCarwashes()

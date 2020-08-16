@@ -24,6 +24,7 @@ import com.mobsandgeeks.saripaar.Validator
 import com.mobsandgeeks.saripaar.annotation.NotEmpty
 import java.time.LocalDate
 import java.time.LocalTime
+import java.time.format.DateTimeFormatter
 
 class CarwashFragment : Fragment() {
 
@@ -77,6 +78,7 @@ class CarwashFragment : Fragment() {
                 val date = LocalDate.of(year, month+1, dayOfMonth)
 
                 binding.viewModel?.datum?.value = date
+                binding.btnCarwashDatum.text = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
             }
             DatePickerDialog(context!!, dateSetListener, initTime.year, initTime.monthValue-1, initTime.dayOfMonth).show()
         }
@@ -91,6 +93,7 @@ class CarwashFragment : Fragment() {
                 val time = LocalTime.of(hourOfDay, minute)
 
                 binding.viewModel?.beginUur?.value = time
+                binding.btnCarwashBeginTijd.text = time.toString()
             }
             TimePickerDialog(context, timeSetListener, initTime.hour, initTime.minute, true).show()
         }
@@ -105,6 +108,7 @@ class CarwashFragment : Fragment() {
                 val time = LocalTime.of(hourOfDay, minute)
 
                 binding.viewModel?.eindUur?.value = time
+                binding.btnCarwashEindTijd.text = time.toString()
             }
             TimePickerDialog(context, timeSetListener, initTime.hour, initTime.minute, true).show()
         }

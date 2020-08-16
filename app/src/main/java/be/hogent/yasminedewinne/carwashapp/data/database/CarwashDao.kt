@@ -26,5 +26,8 @@ interface CarwashDao {
 
     @Query("SELECT * FROM carwashes WHERE gebruikerId = :id")
     fun getEigenCarwashes(id: Int): LiveData<List<Carwash>>
+
+    @Query("DELETE FROM carwashes WHERE id = :id")
+    fun deleteCarwash(id: Int): Int
 }
 

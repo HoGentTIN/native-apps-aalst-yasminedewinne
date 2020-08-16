@@ -23,4 +23,3 @@ interface CarwashApiService{
 object CarwashService {
     val HTTP : CarwashApiService by lazy { BaseService.RETROFIT.create(CarwashApiService::class.java) }
 }
-

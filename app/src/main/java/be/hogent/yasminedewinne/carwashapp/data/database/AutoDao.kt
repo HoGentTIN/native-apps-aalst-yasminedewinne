@@ -19,6 +19,6 @@ interface AutoDao {
     @Query("DELETE FROM autos")
     fun clear(): Int
 
-    @Query("SELECT * FROM autos")
-    fun getAutos(): LiveData<List<Auto>>
+    @Query("SELECT * FROM autos WHERE gebruikerId = :id")
+    fun getAutos(id: Int): LiveData<List<Auto>>
 }
