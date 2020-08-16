@@ -120,12 +120,10 @@ class AfspraakFragment : Fragment() {
             binding.viewModel?.carwashVerwijderen(carwash.id)
 
             // Reset swipe
-            eigenCarwashesAdapter.notifyItemChanged(viewHolder.adapterPosition)
+            eigenCarwashesAdapter.notifyItemRemoved(viewHolder.adapterPosition)
         }
 
-        override fun isItemViewSwipeEnabled(): Boolean {
-            return true
-        }
+        /*
 
         override fun clearView(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder) {
             val foregroundView = (viewHolder as EigenCarwashesAdapter.ViewHolder).viewForeground
@@ -140,7 +138,7 @@ class AfspraakFragment : Fragment() {
         override fun onChildDraw(c: Canvas, recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, dX: Float, dY: Float, actionState: Int, isCurrentlyActive: Boolean) {
             val foregroundView = (viewHolder as EigenCarwashesAdapter.ViewHolder).viewForeground
             getDefaultUIUtil().onDraw(c, recyclerView, foregroundView, dX, dY, actionState, isCurrentlyActive)
-        }
+        }*/
     }
 
 }
